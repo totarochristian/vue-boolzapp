@@ -2,6 +2,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            selectedContactIndex: -1,
             profile:{
                 name: 'Christian',
                 avatar: "./assets/images/profiles/avatar_2.jpg"

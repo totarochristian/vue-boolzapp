@@ -31,9 +31,9 @@
                             <span class="fw-semibold ps-2 fs-6">{{profile.name}}</span>
                         </div>
                         <div class="actions d-flex align-items-center px-4">
-                            <i class="fa-solid fa-circle-notch fs-4 ps-4"></i>
-                            <i class="fa-solid fa-message fs-4 ps-4"></i>
-                            <i class="fa-solid fa-ellipsis-vertical fs-4 ps-4"></i>
+                            <i class="headerIcon fa-solid fa-circle-notch fs-4 ps-4"></i>
+                            <i class="headerIcon fa-solid fa-message fs-4 ps-4"></i>
+                            <i class="headerIcon fa-solid fa-ellipsis-vertical fs-4 ps-4"></i>
                         </div>
                     </div>
                     <div class="formContent">
@@ -44,13 +44,22 @@
                     <div class="formHeader">
 
                     </div>
-                    <div class="formContent">
+                    <div class="formContent d-flex flex-column" v-if="selectedContactIndex>=0">
                         <div id="readMessagesDiv">
 
                         </div>
                         <div id="writeMessagesDiv">
 
                         </div>
+                    </div>
+                    <div class="formContent d-flex justify-content-center align-items-center flex-column p-4" v-else>
+                        <h1 class="headerIcon fa-solid fa-shield-cat pb-4"></h1>
+                        <h2 class="fs-5">Boolzap per Windows</h2>
+                        <p class="fs-6 headerIcon">Invia e ricevi messaggi senza mantenere il telefono connesso a Internet.<br>Usa Boolzap su un massimo di 4 dispositivi e 1 telefono  contemporaneamente.</p>
+                        <p class="fs-6 d-flex align-items-center gap-2 pt-4 headerIcon">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Con crittografia end-to-end</span>
+                        </p>
                     </div>
                 </div>
             </div>

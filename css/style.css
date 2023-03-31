@@ -49,10 +49,13 @@
 #readMessagesDiv{
     height: calc(100% - var(--writeMessagedDivHeight));
 }
-.formHeader i{
-    color: var(--formHeaderIconsColor);
-}
 .profile img{
     width: calc(var(--headerHeight) - 1rem);
     height: calc(var(--headerHeight) - 1rem);
+}
+.headerIcon{
+    color: var(--formHeaderIconsColor);
+}
+.formContent h1{
+    font-size: 4.5rem;
 }
