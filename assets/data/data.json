@@ -5,7 +5,7 @@
             "name": "Filippo",
             "avatar": "./assets/images/profiles/avatar_1.jpg",
             "backgroundImage": "./assets/images/backgrounds/mine.webp",
-            "lastAccess": "Ultimo accesso oggi alle 12:00",
+            "lastAccess": "oggi alle 12:00",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -21,7 +21,7 @@
             "name": "Vito",
             "avatar": "./assets/images/profiles/avatar_2.jpg",
             "backgroundImage": "./assets/images/backgrounds/allRed.png",
-            "lastAccess": "Ultimo accesso oggi alle 11:10",
+            "lastAccess": "oggi alle 11:10",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -42,7 +42,7 @@
             "name": "Raffaele",
             "avatar": "./assets/images/profiles/avatar_3.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestDay.jpg",
-            "lastAccess": "Ultimo accesso oggi alle 9:06",
+            "lastAccess": "oggi alle 9:06",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -68,7 +68,7 @@
             "name": "Clelia",
             "avatar": "./assets/images/profiles/avatar_4.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestDayRed.jpg",
-            "lastAccess": "Ultimo accesso oggi alle 11:35",
+            "lastAccess": "oggi alle 11:35",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -89,7 +89,7 @@
             "name": "Samuel",
             "avatar": "./assets/images/profiles/avatar_5.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestHero.jpg",
-            "lastAccess": "Ultimo accesso ieri alle 19:12",
+            "lastAccess": "ieri alle 19:12",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -110,7 +110,7 @@
             "name": "Davide",
             "avatar": "./assets/images/profiles/avatar_6.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestOrange.jpg",
-            "lastAccess": "Ultimo accesso ieri alle 21:16",
+            "lastAccess": "ieri alle 21:16",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -126,7 +126,7 @@
             "name": "Gaetano",
             "avatar": "./assets/images/profiles/avatar_7.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestSunset.webp",
-            "lastAccess": "Ultimo accesso ieri alle 23:50",
+            "lastAccess": "ieri alle 23:50",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -142,7 +142,7 @@
             "name": "Chiara",
             "avatar": "./assets/images/profiles/avatar_8.jpg",
             "backgroundImage": "./assets/images/backgrounds/manRed.webp",
-            "lastAccess": "Ultimo accesso oggi alle 6:06",
+            "lastAccess": "oggi alle 6:06",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -159,7 +159,7 @@
             "name": "Aniello",
             "avatar": "./assets/images/profiles/avatar_9.jpg",
             "backgroundImage": "./assets/images/backgrounds/mountainsBirds.webp",
-            "lastAccess": "Ultimo accesso oggi alle 00:17",
+            "lastAccess": "oggi alle 00:17",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -176,7 +176,7 @@
             "name": "Christian",
             "avatar": "./assets/images/profiles/avatar_1.jpg",
             "backgroundImage": "./assets/images/backgrounds/riverSunset.webp",
-            "lastAccess": "Ultimo accesso ieri alle 15:06",
+            "lastAccess": "ieri alle 15:06",
             "visible": true,
             "newMessageToSend": "",
             "messages": [

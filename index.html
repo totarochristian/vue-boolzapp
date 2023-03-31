@@ -38,12 +38,15 @@
                     </div>
                     <div class="formContent d-flex flex-column p-1 gap-1">
                         <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded" :class="contact.id==contactOpened.id ? 'active' : ''">
-                            <div class="profile d-flex align-items-center px-1">
-                                <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
-                                <div class="d-flex flex-column">
-                                    <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
-                                <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                            <div class="profile d-flex justify-content-between align-items-center px-1">
+                                <div class="d-flex">
+                                    <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
+                                    <div class="d-flex flex-column">
+                                        <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
+                                        <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                                    </div>
                                 </div>
+                                <span class="fs-6 headerIcon align-self-start">{{contact.lastAccess}}</span>
                             </div>
                         </div>
                     </div>
@@ -54,7 +57,7 @@
                             <img class="rounded-circle" :src="contactOpened.avatar" :alt="'Avatar di '+contactOpened.name" draggable="false">
                             <div class="d-flex flex-column">
                                 <span class="fw-semibold ps-3 fs-6">{{contactOpened.name}}</span>
-                                <span class="fw-semibold ps-3 fs-6 headerIcon">{{contactOpened.lastAccess}}</span>
+                                <span class="fw-semibold ps-3 fs-6 headerIcon">Ultimo accesso {{contactOpened.lastAccess}}</span>
                             </div>
                         </div>
                         <div class="actions d-flex align-items-center px-4">

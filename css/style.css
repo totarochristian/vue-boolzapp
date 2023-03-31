@@ -74,6 +74,7 @@
 .contact{
     cursor: pointer;
 }
+.contact>.profile { width: 100%; }
 .active,.contact:hover{
     background-color: var(--contactActiveBgColor);
 }
