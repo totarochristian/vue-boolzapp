@@ -59,3 +59,7 @@
 .formContent h1{
     font-size: 4.5rem;
 }
+.conversationBarColor{ color: var(--formConversationBarIconsColor); }
+#messageToSend{
+    outline-color: var(--formConversationBarIconsColor);
+}

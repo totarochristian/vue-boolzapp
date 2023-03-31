@@ -4,7 +4,9 @@
             "id": 1,
             "name": "Filippo",
             "avatar": "./assets/images/profiles/avatar_1.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 12:00",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -17,7 +19,9 @@
             "id": 2,
             "name": "Vito",
             "avatar": "./assets/images/profiles/avatar_2.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 11:10",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -35,7 +39,9 @@
             "id": 3,
             "name": "Raffaele",
             "avatar": "./assets/images/profiles/avatar_3.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 9:06",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -58,7 +64,9 @@
             "id": 4,
             "name": "Clelia",
             "avatar": "./assets/images/profiles/avatar_4.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 11:35",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:50:00",
@@ -76,7 +84,9 @@
             "id": 5,
             "name": "Samuel",
             "avatar": "./assets/images/profiles/avatar_5.jpg",
+            "lastAccess": "Ultimo accesso ieri alle 19:12",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -94,7 +104,9 @@
             "id": 6,
             "name": "Davide",
             "avatar": "./assets/images/profiles/avatar_6.jpg",
+            "lastAccess": "Ultimo accesso ieri alle 21:16",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:50:00",
@@ -107,7 +119,9 @@
             "id": 7,
             "name": "Gaetano",
             "avatar": "./assets/images/profiles/avatar_7.jpg",
+            "lastAccess": "Ultimo accesso ieri alle 23:50",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 16:15:22",
@@ -120,7 +134,9 @@
             "id": 8,
             "name": "Chiara",
             "avatar": "./assets/images/profiles/avatar_8.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 6:06",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -134,7 +150,9 @@
             "id": 9,
             "name": "Aniello",
             "avatar": "./assets/images/profiles/avatar_9.jpg",
+            "lastAccess": "Ultimo accesso oggi alle 00:17",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",
@@ -146,9 +164,11 @@
         ,
         {
             "id": 10,
-            "name": "Umberto",
+            "name": "Christian",
             "avatar": "./assets/images/profiles/avatar_10.jpg",
+            "lastAccess": "Ultimo accesso ieri alle 15:06",
             "visible": true,
+            "newMessageToSend": "",
             "messages": [
                 {
                     "date": "10/01/2020 15:30:55",

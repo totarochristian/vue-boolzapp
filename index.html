@@ -26,14 +26,14 @@
             <div id="form" class="d-flex">
                 <div id="formLeft" class="col-4">
                     <div class="formHeader d-flex justify-content-between align-items-center p-2">
-                        <div class="profile d-flex align-items-center">
+                        <div class="profile d-flex align-items-center px-1">
                             <img class="rounded-circle" :src="profile.avatar" :alt="'Avatar di '+profile.name">
                             <span class="fw-semibold ps-2 fs-6">{{profile.name}}</span>
                         </div>
                         <div class="actions d-flex align-items-center px-4">
-                            <i class="headerIcon fa-solid fa-circle-notch fs-4 ps-4"></i>
-                            <i class="headerIcon fa-solid fa-message fs-4 ps-4"></i>
-                            <i class="headerIcon fa-solid fa-ellipsis-vertical fs-4 ps-4"></i>
+                            <i class="fa-solid fa-circle-notch headerIcon fs-4 ps-4"></i>
+                            <i class="fa-solid fa-message headerIcon fs-4 ps-4"></i>
+                            <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
                         </div>
                     </div>
                     <div class="formContent">
@@ -41,15 +41,28 @@
                     </div>
                 </div>
                 <div id="formRight" class="col-8">
-                    <div class="formHeader" v-if="selectedContactIndex>=0">
-
+                    <div class="formHeader d-flex justify-content-between align-items-center p-2" v-if="contactOpened.id>0">
+                        <div class="profile d-flex align-items-center px-2">
+                            <img class="rounded-circle" :src="contactOpened.avatar" :alt="'Avatar di '+contactOpened.name">
+                            <div class="d-flex flex-column">
+                                <span class="fw-semibold ps-3 fs-6">{{contactOpened.name}}</span>
+                                <span class="fw-semibold ps-3 fs-6 headerIcon">{{contactOpened.lastAccess}}</span>
+                            </div>
+                        </div>
+                        <div class="actions d-flex align-items-center px-4">
+                            <i class="fa-solid fa-magnifying-glass headerIcon fs-4 ps-4"></i>
+                            <i class="fa-solid fa-paperclip headerIcon fs-4 ps-4"></i>
+                            <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
+                        </div>
                     </div>
-                    <div class="formContent d-flex flex-column" v-if="selectedContactIndex>=0">
+                    <div class="formContent d-flex flex-column" v-if="contactOpened.id>0">
                         <div id="readMessagesDiv">
 
                         </div>
-                        <div id="writeMessagesDiv">
-
+                        <div id="writeMessagesDiv" class="d-flex justify-content-around align-items-center">
+                            <i class="fa-regular fa-face-smile conversationBarColor fs-4"></i>
+                            <input type="text" name="messageToSend" id="messageToSend" class="conversationBarColor rounded border-0 fs-6 col-10 p-2" v-model="contactOpened.newMessageToSend" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone conversationBarColor fs-4"></i>
                         </div>
                     </div>
                     <div class="formContent d-flex justify-content-center align-items-center flex-column p-4" v-else>
