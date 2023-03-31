@@ -2,6 +2,10 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            profile:{
+                name: 'Christian',
+                avatar: "./assets/images/profiles/avatar_2.jpg"
+            },
             contacts: []
         }
     },

@@ -49,3 +49,7 @@
 #readMessagesDiv{
     height: calc(100% - var(--writeMessagedDivHeight));
 }
+.profile img{
+    width: calc(var(--headerHeight) - 1rem);
+    height: calc(var(--headerHeight) - 1rem);
+}
