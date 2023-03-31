@@ -11,13 +11,14 @@ createApp({
         }
     },
     methods:{
-        
+        OpenContact(index){
+            //Set the opened contact as the index-element of the contacts array
+            this.contactOpened = this.contacts[index];
+        }
     },
     async created(){
         const tmp = await LoadJsonFile();
         //Deep-copy of tmp.contacts array in this.contacts var
         this.contacts = JSON.parse(JSON.stringify(tmp.contacts));
-        //Set the opened contact as the first element of the contacts array
-        this.contactOpened = this.contacts[0];
     }
 }).mount("#app");
