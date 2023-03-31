@@ -5,8 +5,10 @@
     --formWhiteColor: #ffffff;
     --formDisableNotifyColor: #8edafc;
     --formHeaderIconsColor: #b1b1b1;
+    --formConversationBarColor: #f3eeea;
     --formConversationBarIconsColor: #6b7376;
     --headerHeight: 70px;
+    --writeMessagedDivHeight: 70px;
 }
 #app,#mainContainer{ 
     width: 100%; 
@@ -39,4 +41,11 @@
 }
 .formContent{
     height: calc(100% - var(--headerHeight));
+}
+#writeMessagesDiv{
+    height: var(--writeMessagedDivHeight);
+    background-color: var(--formConversationBarColor);
+}
+#readMessagesDiv{
+    height: calc(100% - var(--writeMessagedDivHeight));
 }
