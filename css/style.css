@@ -1,8 +1,13 @@
 :root{
     --coloredStripe: #009688;
     --neutralStripe: #dadbd3;
+    --formHeaderColor: #dadbd3;
+    --formWhiteColor: #ffffff;
+    --formDisableNotifyColor: #8edafc;
+    --formHeaderIconsColor: #b1b1b1;
+    --formConversationBarIconsColor: #6b7376;
 }
-#app{ 
+#app,#mainContainer{ 
     width: 100%; 
     height: 100vh;
 }
@@ -13,4 +18,13 @@
 #neutralStripe{
     height: 85%;
     background-color: var(--neutralStripe);
+}
+#mainContainer{
+    position: fixed;
+    top: 0;
+}
+#form{
+    width: 80%;
+    height: 90%;
+    background-color: var(--formWhiteColor);
 }
