@@ -36,8 +36,16 @@
                             <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
                         </div>
                     </div>
-                    <div class="formContent">
-
+                    <div class="formContent d-flex flex-column p-1 gap-1">
+                        <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded" :class="contact.id==contactOpened.id ? 'active' : ''">
+                            <div class="profile d-flex align-items-center px-1">
+                                <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
+                                <div class="d-flex flex-column">
+                                    <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
+                                <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="formRight" class="col-8">

@@ -174,7 +174,7 @@
         {
             "id": 10,
             "name": "Christian",
-            "avatar": "./assets/images/profiles/avatar_10.jpg",
+            "avatar": "./assets/images/profiles/avatar_1.jpg",
             "backgroundImage": "./assets/images/backgrounds/riverSunset.webp",
             "lastAccess": "Ultimo accesso ieri alle 15:06",
             "visible": true,

@@ -7,6 +7,7 @@
     --formHeaderIconsColor: #b1b1b1;
     --formConversationBarColor: #f3eeea;
     --formConversationBarIconsColor: #6b7376;
+    --contactActiveBgColor: #e9ebeb;
     --headerHeight: 70px;
     --writeMessagedDivHeight: 70px;
 }
@@ -66,4 +67,13 @@
 #readMessagesDiv{
     background-size: cover;
     background-repeat: no-repeat;
+}
+.formContent{
+    overflow-y: auto;
+}
+.contact{
+    cursor: pointer;
+}
+.active,.contact:hover{
+    background-color: var(--contactActiveBgColor);
 }
