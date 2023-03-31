@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Filippo",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_1.jpg",
             "visible": true,
             "messages": [
                 {
@@ -16,7 +16,7 @@
         {
             "id": 2,
             "name": "Vito",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_2.jpg",
             "visible": true,
             "messages": [
                 {
@@ -34,7 +34,7 @@
         {
             "id": 3,
             "name": "Raffaele",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_3.jpg",
             "visible": true,
             "messages": [
                 {
@@ -57,7 +57,7 @@
         {
             "id": 4,
             "name": "Clelia",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_4.jpg",
             "visible": true,
             "messages": [
                 {
@@ -75,7 +75,7 @@
         {
             "id": 5,
             "name": "Samuel",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_5.jpg",
             "visible": true,
             "messages": [
                 {
@@ -93,7 +93,7 @@
         {
             "id": 6,
             "name": "Davide",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_6.jpg",
             "visible": true,
             "messages": [
                 {
@@ -106,7 +106,7 @@
         {
             "id": 7,
             "name": "Gaetano",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_7.jpg",
             "visible": true,
             "messages": [
                 {
@@ -119,7 +119,35 @@
         {
             "id": 8,
             "name": "Chiara",
-            "avatar": "./img/avatar_1.png",
+            "avatar": "./assets/images/profiles/avatar_8.jpg",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                }
+            ]
+        }
+        ,
+        {
+            "id": 9,
+            "name": "Aniello",
+            "avatar": "./assets/images/profiles/avatar_9.jpg",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                }
+            ]
+        }
+        ,
+        {
+            "id": 10,
+            "name": "Umberto",
+            "avatar": "./assets/images/profiles/avatar_10.jpg",
             "visible": true,
             "messages": [
                 {
