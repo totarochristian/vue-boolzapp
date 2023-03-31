@@ -1,11 +1,12 @@
 :root{
     --coloredStripe: #009688;
     --neutralStripe: #dadbd3;
-    --formHeaderColor: #dadbd3;
+    --formHeaderColor: #eaeaea;
     --formWhiteColor: #ffffff;
     --formDisableNotifyColor: #8edafc;
     --formHeaderIconsColor: #b1b1b1;
     --formConversationBarIconsColor: #6b7376;
+    --headerHeight: 70px;
 }
 #app,#mainContainer{ 
     width: 100%; 
@@ -31,4 +32,11 @@
 #formLeft,#formRight{
     border: 1px solid #e1e1e1;
     height: 100%;
+}
+.formHeader{
+    height: var(--headerHeight);
+    background-color: var(--formHeaderColor);
+}
+.formContent{
+    height: calc(100% - var(--headerHeight));
 }
