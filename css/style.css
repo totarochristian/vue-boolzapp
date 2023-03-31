@@ -63,3 +63,7 @@
 #messageToSend{
     outline-color: var(--formConversationBarIconsColor);
 }
+#readMessagesDiv{
+    background-size: cover;
+    background-repeat: no-repeat;
+}

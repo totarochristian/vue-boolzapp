@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Filippo",
             "avatar": "./assets/images/profiles/avatar_1.jpg",
-            "backgroundImage": "./assets/images/backgrounds/mine.jpg",
+            "backgroundImage": "./assets/images/backgrounds/mine.webp",
             "lastAccess": "Ultimo accesso oggi alle 12:00",
             "visible": true,
             "newMessageToSend": "",
