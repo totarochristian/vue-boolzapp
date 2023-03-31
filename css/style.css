@@ -1,0 +1,16 @@
+:root{
+    --coloredStripe: #009688;
+    --neutralStripe: #dadbd3;
+}
+#app{ 
+    width: 100%; 
+    height: 100vh;
+}
+#coloredStripe{
+    height: 15%;
+    background-color: var(--coloredStripe);
+}
+#neutralStripe{
+    height: 85%;
+    background-color: var(--neutralStripe);
+}
