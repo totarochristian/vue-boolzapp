@@ -25,13 +25,15 @@
         <div id="mainContainer" class="d-flex justify-content-center align-items-center">
             <div id="form" class="d-flex">
                 <div id="formLeft" class="col-4">
-                    <div class="formHeader d-flex justify-content-between align-items-center">
-                        <div class="profile d-flex justify-content-between align-items-center p-2">
+                    <div class="formHeader d-flex justify-content-between align-items-center p-2">
+                        <div class="profile d-flex align-items-center">
                             <img class="rounded-circle" :src="profile.avatar" :alt="'Avatar di '+profile.name">
-                            <span class="fw-semibold ps-2">{{profile.name}}</span>
+                            <span class="fw-semibold ps-2 fs-6">{{profile.name}}</span>
                         </div>
-                        <div class="actions">
-                            
+                        <div class="actions d-flex align-items-center px-4">
+                            <i class="fa-solid fa-circle-notch fs-4 ps-4"></i>
+                            <i class="fa-solid fa-message fs-4 ps-4"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fs-4 ps-4"></i>
                         </div>
                     </div>
                     <div class="formContent">
