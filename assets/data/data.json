@@ -1,0 +1,133 @@
+{
+    "contacts": [
+        {
+            "id": 1,
+            "name": "Filippo",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso Vito?",
+                    "status": "sent"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Vito",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                },
+                {
+                    "date": "10/01/2020 16:15:22",
+                    "message": "Tutto fatto!",
+                    "status": "received"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Raffaele",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                },
+                {
+                    "date": "10/01/2020 15:50:00",
+                    "message": "Ricordati di stendere i panni",
+                    "status": "sent"
+                },
+                {
+                    "date": "10/01/2020 16:15:22",
+                    "message": "Tutto fatto!",
+                    "status": "received"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Clelia",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:50:00",
+                    "message": "Ricordati di stendere i panni",
+                    "status": "sent"
+                },
+                {
+                    "date": "10/01/2020 16:15:22",
+                    "message": "Tutto fatto!",
+                    "status": "received"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Samuel",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                },
+                {
+                    "date": "10/01/2020 15:50:00",
+                    "message": "Ricordati di stendere i panni",
+                    "status": "sent"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Davide",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:50:00",
+                    "message": "Ricordati di stendere i panni",
+                    "status": "sent"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Gaetano",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 16:15:22",
+                    "message": "Tutto fatto!",
+                    "status": "received"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Chiara",
+            "avatar": "./img/avatar_1.png",
+            "visible": true,
+            "messages": [
+                {
+                    "date": "10/01/2020 15:30:55",
+                    "message": "Hai portato a spasso il cane?",
+                    "status": "sent"
+                }
+            ]
+        }
+    ]
+}
