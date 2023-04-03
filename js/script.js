@@ -53,6 +53,8 @@ createApp({
             }
             //Add the message to the array of messages
             contact.messages.push(obj);
+            //Play an audio to notify the user the new message
+            PlayAudio("../assets/sounds/new/newMessage1.wav");
         },
         /**
          * Function used to toggle the splash screen.

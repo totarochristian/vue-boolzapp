@@ -85,3 +85,8 @@ function DatesAreEquals(date1, date2){
         return false;
     return true;
 }
+
+function PlayAudio(audioSrc){
+    const aud = new Audio(audioSrc);
+    aud.play();
+}
