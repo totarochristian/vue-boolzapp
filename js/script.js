@@ -7,7 +7,12 @@ createApp({
             contactOpened: { id: -1 },
             profile:{
                 name: 'Christian',
-                avatar: "./assets/images/profiles/avatar_2.jpg"
+                avatar: "./assets/images/profiles/avatar_2.jpg",
+                sounds: {
+                    newMessage: "../assets/sounds/new/newMessage1.wav",
+                    deleteMessage: "../assets/sounds/delete/deleteMessage1.wav",
+                    saveMessage: ""
+                }
             },
             contacts: []
         }
@@ -64,7 +69,7 @@ createApp({
             //Add the message to the array of messages
             this.contacts[index].messages.push(obj);
             //Play an audio to notify the user the new message
-            PlayAudio("../assets/sounds/new/newMessage1.wav");
+            PlayAudio(this.profile.sounds.newMessage);
             //Sort the contacts because of the new message
             this.SortContacts();
         },
@@ -90,7 +95,9 @@ createApp({
             //Splice the messages array at the passed index
             this.contactOpened.messages.splice(index,1);
             //Play an audio to notify the user the deletion of a message
-            PlayAudio("../assets/sounds/delete/deleteMessage1.wav");
+            PlayAudio(this.profile.sounds.deleteMessage);
+            //Sort the contacts because of the deleting of a message
+            this.SortContacts();
         },
         SortContacts(){
             //Compare the dates defined in the descending order 
