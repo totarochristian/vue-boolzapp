@@ -44,9 +44,9 @@ createApp({
                 this.contactOpened.messages.push(obj);
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
-                //Start a timeout before a simulated random message from the contact
+                //Start a timeout (with random time) before the simulation of a random message from the contact
                 const index = this.contacts.indexOf(this.contactOpened);
-                setTimeout(()=>{this.RandomMessageByContact(index)},1000);
+                setTimeout(()=>{this.RandomMessageByContact(index)},GetRandomInt(10000,1000));
             }
         },
         RandomMessageByContact(index){
