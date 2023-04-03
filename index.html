@@ -38,7 +38,7 @@
                             <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
                         </div>
                     </div>
-                    <div class="formContent d-flex flex-column gap-1">
+                    <div class="formContent d-flex flex-column gap-1 overflow-hidden">
                         <div id="disableNotify" class="d-flex justify-content-between align-items-center p-3">
                             <div id="bell" class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center">
                                 <i class="fa-solid fa-bell-slash fs-5 p-2 headerIcon"></i>
@@ -48,22 +48,24 @@
                                 <span class="fw-semibold ps-2 fs-7 text-decoration-underline activeNotifyColor">Attiva notifiche desktop</span>
                             </div>
                         </div>
-                        <div class="input-group px-2 pt-1">
+                        <div id="searchBar" class="input-group px-2 pt-1">
                             <span class="input-group-text bg-white px-4" id="searchChatIcon">
                                 <i class="fa-solid fa-magnifying-glass headerIcon"></i>
                             </span>
                             <input id="searchChat" v-model="chatToSearch" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon">
                         </div>
-                        <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded m-1 mb-0" :class="contact.id==contactOpened.id ? 'active' : ''">
-                            <div class="profile d-flex justify-content-between align-items-center px-1">
-                                <div class="d-flex">
-                                    <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
-                                        <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                        <div id="contactsList" class="d-flex flex-column overflow-y-auto">
+                            <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded m-1 mb-0" :class="contact.id==contactOpened.id ? 'active' : ''">
+                                <div class="profile d-flex justify-content-between align-items-center px-1">
+                                    <div class="d-flex">
+                                        <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
+                                            <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                                        </div>
                                     </div>
+                                    <span class="fs-6 headerIcon align-self-start">{{contact.messages[contact.messages.length-1].dateAbbreviation}}</span>
                                 </div>
-                                <span class="fs-6 headerIcon align-self-start">{{contact.messages[contact.messages.length-1].dateAbbreviation}}</span>
                             </div>
                         </div>
                     </div>
