@@ -8,8 +8,11 @@
     --formConversationBarColor: #f3eeea;
     --formConversationBarIconsColor: #6b7376;
     --contactActiveBgColor: #e9ebeb;
+    --lastAccessColor: #8e7483;
+    --activeNotifyDesktopColor: #648da7;
     --headerHeight: 70px;
     --writeMessagedDivHeight: 70px;
+    --bellSize: 50px;
 }
 #app,#mainContainer{ 
     width: 100%; 
@@ -77,4 +80,26 @@
 .contact>.profile { width: 100%; }
 .active,.contact:hover{
     background-color: var(--contactActiveBgColor);
+}
+#disableNotify{
+    background-color: var(--formDisableNotifyColor);
+}
+#disableNotify i{
+    background-color: var(--formWhiteColor);
+    color: var(--formDisableNotifyColor);
+}
+#disableNotify>#bell{
+    width: var(--bellSize);
+    height: var(--bellSize);
+    background-color: var(--formWhiteColor);
+    color: var(--formDisableNotifyColor);
+}
+.activeNotifyColor{
+    color: var(--activeNotifyDesktopColor);
+}
+.lastAccessColor{
+    color: var(--lastAccessColor);
+}
+.fs-7{
+    font-size: 0.9rem;
 }
