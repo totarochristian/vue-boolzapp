@@ -40,9 +40,15 @@ createApp({
                 this.contactOpened.newMessageToSend = '';
             }
         },
+        /**
+         * Function used to toggle the splash screen.
+         */
         ToggleSplashScreen(){
             this.splashVisibility = !this.splashVisibility;
         },
+        /**
+         * Function used to set visible or invisible a contact searched in the search bar.
+         */
         SearchContact(){
             const text = this.chatToSearch.toLowerCase();
             this.contacts.forEach(function(contact){
