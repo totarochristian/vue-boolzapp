@@ -241,7 +241,7 @@
     content: '';
     border: 0;
 }
-.formHeader>.actions>i:hover, .formHeader>.actions>span:hover{
+.formHeader>.actions>i:hover, .formHeader>.actions>.dropdown>span:hover{
     color: var(--formConversationBarIconsColor);
     cursor: pointer;
 }
