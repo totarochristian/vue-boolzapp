@@ -52,7 +52,7 @@
                             <span class="input-group-text bg-white px-4" id="searchChatIcon">
                                 <i class="fa-solid fa-magnifying-glass headerIcon"></i>
                             </span>
-                            <input id="searchChat" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon">
+                            <input id="searchChat" v-model="chatToSearch" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon">
                         </div>
                         <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded m-1 mb-0" :class="contact.id==contactOpened.id ? 'active' : ''">
                             <div class="profile d-flex justify-content-between align-items-center px-1">

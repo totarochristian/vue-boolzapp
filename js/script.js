@@ -2,6 +2,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            chatToSearch: '',
             contactOpened: { id: -1 },
             profile:{
                 name: 'Christian',
