@@ -226,7 +226,7 @@
     visibility: visible;
     cursor: pointer;
 }
-.message .dropdown a:active{
+.message .dropdown a:active, .actions .dropdown-item:active{
     background-color: #f8f9fa;
     color: black;
 }
@@ -243,4 +243,8 @@
 }
 .formHeader>.actions>i:hover, .formHeader>.actions>span:hover{
     color: var(--formConversationBarIconsColor);
+    cursor: pointer;
+}
+.dropdown-menu li>div{
+    cursor: pointer;
 }

@@ -106,6 +106,9 @@ createApp({
                 const date2 = new Date(contact2.messages[contact2.messages.length-1].date);
                 return CompareDates(date1, date2, false);
             });
+        },
+        CloseChat(){
+            this.contactOpened = { id: -1 };
         }
     },
     async created(){
