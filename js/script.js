@@ -44,6 +44,8 @@ createApp({
                 this.contactOpened.messages.push(obj);
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
+                //Sort the contacts because of the new message
+                this.SortContacts();
                 //Start a timeout (with random time) before the simulation of a random message from the contact
                 const index = this.contacts.indexOf(this.contactOpened);
                 setTimeout(()=>{this.RandomMessageByContact(index)},GetRandomInt(10000,1000));
@@ -63,6 +65,8 @@ createApp({
             this.contacts[index].messages.push(obj);
             //Play an audio to notify the user the new message
             PlayAudio("../assets/sounds/new/newMessage1.wav");
+            //Sort the contacts because of the new message
+            this.SortContacts();
         },
         /**
          * Function used to toggle the splash screen.
@@ -87,6 +91,14 @@ createApp({
             this.contactOpened.messages.splice(index,1);
             //Play an audio to notify the user the deletion of a message
             PlayAudio("../assets/sounds/delete/deleteMessage1.wav");
+        },
+        SortContacts(){
+            //Compare the dates defined in the descending order 
+            this.contacts.sort((contact1,contact2)=>{
+                const date1 = new Date(contact1.messages[contact1.messages.length-1].date);
+                const date2 = new Date(contact2.messages[contact2.messages.length-1].date);
+                return CompareDates(date1, date2, false);
+            });
         }
     },
     async created(){
@@ -101,17 +113,16 @@ createApp({
                 message.dateAbbreviation = GetContactLastMessageDate(message.date);
                 message.timeAbbreviation = GetCustomTimeString(new Date(message.date));
             });
-            //Sort the messages arrays
+            //Sort the messages arrays in the ascending order using dates
             contact.messages.sort((mess1,mess2)=>{
                 const date1 = new Date(mess1.date);
                 const date2 = new Date(mess2.date);
-                if(date1 < date2)
-                    return -1;
-                else if(date1 > date2)
-                    return 1;
-                return 0;
+                return CompareDates(date1, date2, true);
             });
         });
+
+        //Sort the contacts array to order the chats after the re-ordering of the messages arrays.
+        this.SortContacts();
     },
     mounted(){
         setTimeout(this.ToggleSplashScreen,3000);

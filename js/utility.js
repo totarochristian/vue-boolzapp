@@ -106,3 +106,11 @@ function GetRandomInt(max,min) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+function CompareDates(date1, date2, growing){
+    if(date1 < date2)
+        return growing ? -1 : 1;
+    else if(date1 > date2)
+        return growing ? 1 : -1;
+    return 0;
+}
