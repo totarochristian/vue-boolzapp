@@ -86,6 +86,10 @@ function DatesAreEquals(date1, date2){
     return true;
 }
 
+/**
+ * Function used to play an audio passing the source address of the file.
+ * @param {*} audioSrc String with the url where is located the file to reproduce.
+ */
 function PlayAudio(audioSrc){
     const aud = new Audio(audioSrc);
     aud.play();
