@@ -2,6 +2,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            splashVisibility: true,
             chatToSearch: '',
             contactOpened: { id: -1 },
             profile:{
@@ -38,6 +39,9 @@ createApp({
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
             }
+        },
+        ToggleSplashScreen(){
+            this.splashVisibility = !this.splashVisibility;
         }
     },
     async created(){
@@ -52,5 +56,8 @@ createApp({
                 message.timeAbbreviation = GetCustomTimeString(new Date(message.date));
             });
         });
+    },
+    mounted(){
+        setTimeout(this.ToggleSplashScreen,3000);
     }
 }).mount("#app");

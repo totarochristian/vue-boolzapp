@@ -22,9 +22,17 @@
 </head>
 <body>
     <div id="app">
-        <div id="coloredStripe"></div>
-        <div id="neutralStripe"></div>
-        <div id="mainContainer" class="d-flex justify-content-center align-items-center">
+        <div id="splashScreen" v-if="splashVisibility==true" class="d-flex justify-content-center align-items-center">
+            <div class="d-flex flex-column justify-content-center align-items-center p-4 rounded-circle">
+                <div class="boxTransitionTop"></div>
+                <h1 class="headerIcon fa-solid fa-shield-cat pb-4"></h1>
+                <h2 class="fs-1 text-white">Boolzap</h2>
+                <div class="boxTransitionBottom"></div>
+            </div>
+        </div>
+        <div id="coloredStripe" v-if="splashVisibility==false"></div>
+        <div id="neutralStripe" v-if="splashVisibility==false"></div>
+        <div id="mainContainer" v-if="splashVisibility==false" class="d-flex justify-content-center align-items-center">
             <div id="form" class="d-flex">
                 <div id="formLeft" class="col-4">
                     <div class="formHeader d-flex justify-content-between align-items-center p-2">

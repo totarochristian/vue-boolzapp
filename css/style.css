@@ -11,11 +11,12 @@
     --lastAccessColor: #8e7483;
     --activeNotifyDesktopColor: #648da7;
     --messageSentedByMeColor: #d5f9ba;
+    --splashBackgroundColor: black;
     --headerHeight: 70px;
     --writeMessagedDivHeight: 70px;
     --bellSize: 50px;
 }
-#app,#mainContainer{ 
+#app,#mainContainer,#splashScreen{ 
     width: 100%; 
     height: 100vh;
 }
@@ -61,7 +62,7 @@
 .headerIcon{
     color: var(--formHeaderIconsColor);
 }
-.formContent h1{
+.formContent h1, #splashScreen h1{
     font-size: 4.5rem;
 }
 .conversationBarColor{ color: var(--formConversationBarIconsColor); }
@@ -122,4 +123,86 @@
 .messageByMe{
     background-color: var(--messageSentedByMeColor);
     align-self: end;
+}
+#splashScreen{
+    background-color: var(--splashBackgroundColor);
+    z-index: 4000;
+}
+#splashScreen>div{
+    border: 3px solid var(--formWhiteColor);
+    position: relative;
+}
+
+
+.boxTransitionTop {
+    position: absolute;
+    top: -10px;
+    left: 10%;
+    background: var(--splashBackgroundColor);
+    width: 30px;
+    height: 30px;
+}
+.boxTransitionBottom{
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    background: var(--splashBackgroundColor);
+    width: 30px;
+    height: 30px;
+}
+.boxTransitionTop{
+    animation: moveRightBottom 3s 0.2s infinite ease-out both;
+}
+.boxTransitionBottom{
+    animation: moveLeftTop 3s 0.2s infinite ease-out both;
+}
+@keyframes moveLeftTop{
+    0%{
+        right: -10px;
+    }
+    50%{
+        right: 98%;
+        bottom: -10px;
+    }
+    51%{
+        width: 20px;
+        height: 20px;
+    }
+    90%{
+        bottom: 90%;
+        right: 95%;
+        width: 20px;
+        height: 20px;
+    }
+    100%{
+        bottom: 90%;
+        right: 100%;
+        width: 30px;
+        height: 20px;
+    }
+}
+@keyframes moveRightBottom{
+    0%{
+        left: -10px;
+    }
+    50%{
+        left: 98%;
+        top: -10px;
+    }
+    51%{
+        width: 20px;
+        height: 20px;
+    }
+    90%{
+        top: 90%;
+        left: 95%;
+        width: 20px;
+        height: 20px;
+    }
+    100%{
+        top: 90%;
+        left: 100%;
+        width: 30px;
+        height: 20px;
+    }
 }
