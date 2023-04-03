@@ -10,11 +10,11 @@ function GetContactLastMessageDate(date){
     const messageDate = new Date(date);
     let result = '';
     if(DatesAreEquals(currentDate,messageDate))
-        result = GetCustomTime(messageDate);
+        result = GetCustomTimeString(messageDate);
     else if(DatesAreEquals(prevDate,messageDate))
         result = "Ieri";
     else
-        result = GetCustomDate(messageDate);
+        result = GetCustomDateString(messageDate);
     return result;
 }
 function GetPreviousDate(date){
@@ -22,10 +22,10 @@ function GetPreviousDate(date){
     dt.setDate(date.getDate() - 1);
     return dt;
 }
-function GetCustomTime(date){
+function GetCustomTimeString(date){
     return date.getHours() + ":" + date.getMinutes();
 }
-function GetCustomDate(date){
+function GetCustomDateString(date){
     return date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
 }
 function DatesAreEquals(date1, date2){
