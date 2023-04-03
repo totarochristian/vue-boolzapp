@@ -93,6 +93,10 @@ createApp({
                     contact.visible = false;
             });
         },
+        /**
+         * Function used to delete a message using the index in the array of messages opened.
+         * @param {*} index Index of the message to delete.
+         */
         DeleteMessage(index){
             //Splice the messages array at the passed index
             this.contactOpened.messages.splice(index,1);
@@ -101,6 +105,9 @@ createApp({
             //Sort the contacts because of the deleting of a message
             this.SortContacts();
         },
+        /**
+         * Function used to sort the contacts in descending order.
+         */
         SortContacts(){
             //Compare the dates defined in the descending order 
             this.contacts.sort((contact1,contact2)=>{
@@ -109,12 +116,22 @@ createApp({
                 return CompareDates(date1, date2, false);
             });
         },
+        /**
+         * Function used to close an opened chat.
+         */
         CloseChat(){
             this.contactOpened = { id: -1 };
         },
+        /**
+         * Function used to set the tempModalResult var with a passed value.
+         * @param {*} result Value to be saved in the temporary variable.
+         */
         SetTempModalResult(result){
             this.tempModalResult = result;
         },
+        /**
+         * Function used to set the new chat background using the tempModalResult value stored previously.
+         */
         SaveNewChatBackground(){
             this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
         }
