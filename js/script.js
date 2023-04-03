@@ -42,6 +42,15 @@ createApp({
         },
         ToggleSplashScreen(){
             this.splashVisibility = !this.splashVisibility;
+        },
+        SearchContact(){
+            const text = this.chatToSearch.toLowerCase();
+            this.contacts.forEach(function(contact){
+                if(text=='' || contact.name.toLowerCase().includes(text))
+                    contact.visible = true;
+                else
+                    contact.visible = false;
+            });
         }
     },
     async created(){
