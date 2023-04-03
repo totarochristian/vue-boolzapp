@@ -15,6 +15,19 @@ createApp({
         OpenContact(index){
             //Set the opened contact as the index-element of the contacts array
             this.contactOpened = this.contacts[index];
+        },
+        SendNewMessage(){
+            if(this.contactOpened.newMessageToSend){
+                const tmpDate = GetCurrentDateTimeStringFormatted();
+                const obj = {
+                    date: tmpDate,
+                    dateAbbreviation: GetContactLastMessageDate(tmpDate),
+                    timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
+                    message: this.contactOpened.newMessageToSend,
+                    status: "sent"
+                }
+                this.contactOpened.messages.push(obj);
+            }
         }
     },
     async created(){

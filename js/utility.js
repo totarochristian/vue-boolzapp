@@ -60,6 +60,17 @@ function GetCustomDateString(date){
 }
 
 /**
+ * Function used to get a string containing the current date and time in the format: yyyy-mm-dd hh:mm:ss .
+ * @returns String containing the current date and time.
+ */
+function GetCurrentDateTimeStringFormatted(){
+    const dt = new Date();
+    dt.setHours(dt.getHours() + 2);
+    let res = dt.toISOString().replace('T',' ');
+    return res.substring(0,res.length-5);
+}
+
+/**
  * Function used to compare two dates (this function will not check the time).
  * @param {*} date1 Date 1 to be compared.
  * @param {*} date2 Date 2 to be compared.
