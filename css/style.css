@@ -103,3 +103,7 @@
 .fs-7{
     font-size: 0.9rem;
 }
+#searchChat::placeholder{
+    font-weight: 600;
+    color: var(--lastAccessColor);
+}
