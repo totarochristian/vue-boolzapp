@@ -159,7 +159,7 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Scegli il nuovo sfondo della chat con {{contactOpened.name}}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="SetTempModalResult(0)"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body overflow-y-auto">
                         <div class="d-flex justify-content-center align-items-center p-4 flex-wrap" v-if="chatBackgrounds.length > 1">
                             <div class="image" v-for="(background,index) in chatBackgrounds" @click="SetTempModalResult(index)" :class="index == tempModalResult ? 'selectedBackground' : ''">
                                 <img :src="'./assets/images/backgrounds/'+background" :alt="'Sfondo '+index">

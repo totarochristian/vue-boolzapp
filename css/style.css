@@ -248,6 +248,9 @@
 .dropdown-menu li>div{
     cursor: pointer;
 }
+.modal-body{
+    max-height: 70vh;
+}
 .modal-body .image{
     width: 200px;
     height: 150px;
