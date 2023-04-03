@@ -230,3 +230,10 @@
     background-color: #f8f9fa;
     color: black;
 }
+
+#formRight>.formHeader>.profile>img{
+    filter: brightness(95%);
+}
+#formRight>.formHeader>.profile:hover>img{
+    filter: brightness(100%);
+}
