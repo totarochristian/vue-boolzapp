@@ -120,6 +120,7 @@
     max-width: 55%;
     align-self: start;
     position: relative;
+    box-shadow: 0 0 5px #888;
 }
 .messageByMe{
     background-color: var(--messageSentedByMeColor);
