@@ -119,6 +119,7 @@
     background-color: var(--formWhiteColor);
     max-width: 55%;
     align-self: start;
+    position: relative;
 }
 .messageByMe{
     background-color: var(--messageSentedByMeColor);
@@ -211,4 +212,20 @@
 }
 .profile>.newMessageAndTime{
     height: 100%;
+}
+.message .dropdown{
+    border: 0;
+    background: none;
+    visibility: hidden;
+    position: absolute;
+    top: -13px;
+    right: 0;
+}
+.message:hover .dropdown{
+    visibility: visible;
+    cursor: pointer;
+}
+.message .dropdown a:active{
+    background-color: #f8f9fa;
+    color: black;
 }

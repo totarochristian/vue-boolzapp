@@ -81,6 +81,9 @@ createApp({
                 else
                     contact.visible = false;
             });
+        },
+        DeleteMessage(index){
+            this.contactOpened.messages.splice(index,1);
         }
     },
     async created(){

@@ -98,8 +98,21 @@
                     </div>
                     <div class="formContent d-flex flex-column overflow-hidden" v-if="contactOpened.id>0">
                         <div id="readMessagesDiv" class="d-flex flex-column overflow-y-auto" :style="'background-image: url('+contactOpened.backgroundImage+');'">
-                            <div :id="'message'+index" v-for="(message,index) in contactOpened.messages" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
-                                <span class="p-3 pb-1">{{message.message}}</span>
+                            <div :id="'message'+index" v-for="(message,index) in contactOpened.messages" v-if="contactOpened.messages.length > 0" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
+                                <div class="d-flex">
+                                    <span class="p-3 pb-1">{{message.message}}</span>
+                                    <div class="dropdown align-self-end p-2">
+                                        <span class="dropdown-toggle fs-4" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item d-flex align-items-center gap-2" @click="DeleteMessage(index)" :class="contactOpened.messages.length > 1 ? '' : 'disabled'">
+                                                    <i class="fa-regular fa-trash-can"></i>
+                                                    <span>Elimina</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <span class="p-1 pt-0 align-self-end headerIcon fs-8">{{message.timeAbbreviation}}</span>
                             </div>
                         </div>
