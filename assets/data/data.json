@@ -14,7 +14,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso Vito?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         },
@@ -32,14 +33,16 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 }
             ]
         },
@@ -57,84 +60,96 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:50:00",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:30:55",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:50:00",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:30:55",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:50:00",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:30:55",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:50:00",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 }
             ]
         },
@@ -152,14 +167,16 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 16:15:22",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 }
             ]
         },
@@ -177,14 +194,16 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 },
                 {
                     "date": "2023-04-03 15:50:00",
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         },
@@ -202,7 +221,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         },
@@ -220,7 +240,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Tutto fatto!",
-                    "status": "received"
+                    "status": "received",
+                    "toRead": false
                 }
             ]
         },
@@ -238,7 +259,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         }
@@ -257,7 +279,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         }
@@ -276,7 +299,8 @@
                     "dateAbbreviation": "",
                     "timeAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
-                    "status": "sent"
+                    "status": "sent",
+                    "toRead": false
                 }
             ]
         }

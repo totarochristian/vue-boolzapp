@@ -72,7 +72,10 @@
                                             <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
                                         </div>
                                     </div>
-                                    <span class="fs-6 headerIcon align-self-start">{{contact.messages[contact.messages.length-1].dateAbbreviation}}</span>
+                                    <div class="newMessageAndTime d-flex flex-column justify-content-between">
+                                        <span class="fs-6 headerIcon" :class="contact.messages[contact.messages.length-1].toRead ? 'toRead' : ''">{{contact.messages[contact.messages.length-1].dateAbbreviation}}</span>
+                                        <i class="fa-solid fa-circle fs-7 align-self-end" :class="contact.messages[contact.messages.length-1].toRead ? 'toRead' : 'invisible'"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>

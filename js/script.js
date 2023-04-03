@@ -20,6 +20,11 @@ createApp({
         OpenContact(index){
             //Set the opened contact as the index-element of the contacts array.
             this.contactOpened = this.contacts[index];
+            //Reset the messages to read when user open the chat
+            this.contactOpened.messages.forEach(function(message){
+                if(message.toRead)
+                    message.toRead = false;
+            });
         },
         /**
          * Function used to send a new message to an opened contact.
@@ -32,27 +37,30 @@ createApp({
                     dateAbbreviation: GetContactLastMessageDate(tmpDate),
                     timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
                     message: this.contactOpened.newMessageToSend,
-                    status: "sent"
+                    status: "sent",
+                    toRead: false
                 }
                 //Add the message to the array of messages
                 this.contactOpened.messages.push(obj);
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
                 //Start a timeout before a simulated random message from the contact
-                setTimeout(()=>{this.RandomMessageByContact(this.contactOpened)},1000);
+                const index = this.contacts.indexOf(this.contactOpened);
+                setTimeout(()=>{this.RandomMessageByContact(index)},1000);
             }
         },
-        RandomMessageByContact(contact){
+        RandomMessageByContact(index){
             const tmpDate = GetCurrentDateTimeStringFormatted();
             const obj = {
                 date: tmpDate,
                 dateAbbreviation: GetContactLastMessageDate(tmpDate),
                 timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
                 message: "ok",
-                status: "received"
+                status: "received",
+                toRead: this.contactOpened.id == this.contacts[index].id ? false : true
             }
             //Add the message to the array of messages
-            contact.messages.push(obj);
+            this.contacts[index].messages.push(obj);
             //Play an audio to notify the user the new message
             PlayAudio("../assets/sounds/new/newMessage1.wav");
         },
