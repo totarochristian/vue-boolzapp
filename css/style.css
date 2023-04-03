@@ -10,6 +10,7 @@
     --contactActiveBgColor: #e9ebeb;
     --lastAccessColor: #8e7483;
     --activeNotifyDesktopColor: #648da7;
+    --messageSentedByMeColor: #d5f9ba;
     --headerHeight: 70px;
     --writeMessagedDivHeight: 70px;
     --bellSize: 50px;
@@ -103,7 +104,22 @@
 .fs-7{
     font-size: 0.9rem;
 }
+.fs-8{
+    font-size: 0.7rem;
+}
 #searchChat::placeholder{
     font-weight: 600;
     color: var(--lastAccessColor);
+}
+#readMessagesDiv{
+    padding: 10%;
+}
+.message{
+    background-color: var(--formWhiteColor);
+    min-width: 55%;
+    align-self: start;
+}
+.messageByMe{
+    background-color: var(--messageSentedByMeColor);
+    align-self: end;
 }

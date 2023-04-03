@@ -83,9 +83,12 @@
                             <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
                         </div>
                     </div>
-                    <div class="formContent d-flex flex-column" v-if="contactOpened.id>0">
-                        <div id="readMessagesDiv" :style="'background-image: url('+contactOpened.backgroundImage+');'">
-
+                    <div class="formContent d-flex flex-column overflow-hidden" v-if="contactOpened.id>0">
+                        <div id="readMessagesDiv" class="d-flex flex-column overflow-y-auto" :style="'background-image: url('+contactOpened.backgroundImage+');'">
+                            <div :id="'message'+index" v-for="(message,index) in contactOpened.messages" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
+                                <span class="p-3 pb-1">{{message.message}}</span>
+                                <span class="p-1 pt-0 align-self-end headerIcon fs-8">{{message.timeAbbreviation}}</span>
+                            </div>
                         </div>
                         <div id="writeMessagesDiv" class="d-flex justify-content-around align-items-center">
                             <i class="fa-regular fa-face-smile conversationBarColor fs-4 flex-fill text-center"></i>

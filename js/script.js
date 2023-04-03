@@ -22,9 +22,11 @@ createApp({
         //Deep-copy of tmp.contacts array in this.contacts var
         this.contacts = JSON.parse(JSON.stringify(tmp.contacts));
 
+        //Update field used to set preview times
         this.contacts.forEach(function(contact) {
             contact.messages.forEach(function(message){
                 message.dateAbbreviation = GetContactLastMessageDate(message.date);
+                message.timeAbbreviation = GetCustomTimeString(new Date(message.date));
             });
         });
     }
