@@ -4,6 +4,7 @@ createApp({
         return {
             splashVisibility: true,
             chatToSearch: '',
+            tempModalResult: '',
             contactOpened: { id: -1 },
             profile:{
                 name: 'Christian',
@@ -14,7 +15,8 @@ createApp({
                     saveMessage: ""
                 }
             },
-            contacts: []
+            contacts: [],
+            chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"]
         }
     },
     methods:{
@@ -109,6 +111,12 @@ createApp({
         },
         CloseChat(){
             this.contactOpened = { id: -1 };
+        },
+        SetTempModalResult(result){
+            this.tempModalResult = result;
+        },
+        SaveNewChatBackground(){
+            this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
         }
     },
     async created(){

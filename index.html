@@ -97,7 +97,7 @@
                                 <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="ChangeTheme">
+                                        <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground">
                                             <i class="fa-regular fa-image"></i>
                                             <span>Cambia sfondo</span>
                                         </div>
@@ -147,6 +147,28 @@
                             <i class="fa-solid fa-lock"></i>
                             <span>Con crittografia end-to-end</span>
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal used to make the user chose the backgrounds of a chat -->
+        <div class="modal fade modal-xl" id="choseChatBackground" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="SetTempModalResult(0)"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-center align-items-center p-4 flex-wrap" v-if="chatBackgrounds.length > 1">
+                            <div class="image" v-for="(background,index) in chatBackgrounds" @click="SetTempModalResult(index)" :class="index == tempModalResult ? 'selectedBackground' : ''">
+                                <img :src="'./assets/images/backgrounds/'+background" :alt="'Sfondo '+index">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveNewChatBackground()">Save changes</button>
                     </div>
                 </div>
             </div>
