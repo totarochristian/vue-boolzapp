@@ -38,7 +38,21 @@ createApp({
                 this.contactOpened.messages.push(obj);
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
+                //Start a timeout before a simulated random message from the contact
+                setTimeout(()=>{this.RandomMessageByContact(this.contactOpened)},1000);
             }
+        },
+        RandomMessageByContact(contact){
+            const tmpDate = GetCurrentDateTimeStringFormatted();
+            const obj = {
+                date: tmpDate,
+                dateAbbreviation: GetContactLastMessageDate(tmpDate),
+                timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
+                message: "ok",
+                status: "received"
+            }
+            //Add the message to the array of messages
+            contact.messages.push(obj);
         },
         /**
          * Function used to toggle the splash screen.
