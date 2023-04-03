@@ -83,7 +83,10 @@ createApp({
             });
         },
         DeleteMessage(index){
+            //Splice the messages array at the passed index
             this.contactOpened.messages.splice(index,1);
+            //Play an audio to notify the user the deletion of a message
+            PlayAudio("../assets/sounds/delete/deleteMessage1.wav");
         }
     },
     async created(){
