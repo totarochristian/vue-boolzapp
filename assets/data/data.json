@@ -10,7 +10,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-03 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso Vito?",
                     "status": "sent"
                 }
@@ -26,12 +27,14 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-03 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 },
                 {
-                    "date": "10/01/2020 16:15:22",
+                    "date": "2023-04-03 16:15:22",
+                    "dateAbbreviation": "",
                     "message": "Tutto fatto!",
                     "status": "received"
                 }
@@ -47,17 +50,20 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-03 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 },
                 {
-                    "date": "10/01/2020 15:50:00",
+                    "date": "2023-04-03 15:50:00",
+                    "dateAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
                     "status": "sent"
                 },
                 {
-                    "date": "10/01/2020 16:15:22",
+                    "date": "2023-04-03 16:15:22",
+                    "dateAbbreviation": "",
                     "message": "Tutto fatto!",
                     "status": "received"
                 }
@@ -73,12 +79,14 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:50:00",
+                    "date": "2023-04-02 15:50:00",
+                    "dateAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
                     "status": "sent"
                 },
                 {
-                    "date": "10/01/2020 16:15:22",
+                    "date": "2023-04-03 16:15:22",
+                    "dateAbbreviation": "",
                     "message": "Tutto fatto!",
                     "status": "received"
                 }
@@ -94,12 +102,14 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-03 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 },
                 {
-                    "date": "10/01/2020 15:50:00",
+                    "date": "2023-04-03 15:50:00",
+                    "dateAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
                     "status": "sent"
                 }
@@ -115,7 +125,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:50:00",
+                    "date": "2023-03-30 15:50:00",
+                    "dateAbbreviation": "",
                     "message": "Ricordati di stendere i panni",
                     "status": "sent"
                 }
@@ -131,7 +142,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 16:15:22",
+                    "date": "2023-03-20 16:15:22",
+                    "dateAbbreviation": "",
                     "message": "Tutto fatto!",
                     "status": "received"
                 }
@@ -147,7 +159,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-02 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 }
@@ -164,7 +177,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-01 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 }
@@ -181,7 +195,8 @@
             "newMessageToSend": "",
             "messages": [
                 {
-                    "date": "10/01/2020 15:30:55",
+                    "date": "2023-04-03 15:30:55",
+                    "dateAbbreviation": "",
                     "message": "Hai portato a spasso il cane?",
                     "status": "sent"
                 }

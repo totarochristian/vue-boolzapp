@@ -21,5 +21,11 @@ createApp({
         const tmp = await LoadJsonFile();
         //Deep-copy of tmp.contacts array in this.contacts var
         this.contacts = JSON.parse(JSON.stringify(tmp.contacts));
+
+        this.contacts.forEach(function(contact) {
+            contact.messages.forEach(function(message){
+                message.dateAbbreviation = GetContactLastMessageDate(message.date);
+            });
+        });
     }
 }).mount("#app");
