@@ -237,3 +237,10 @@
 #formRight>.formHeader>.profile:hover>img{
     filter: brightness(100%);
 }
+.actions .dropdown-toggle::after{
+    content: '';
+    border: 0;
+}
+.formHeader>.actions>i:hover, .formHeader>.actions>span:hover{
+    color: var(--formConversationBarIconsColor);
+}

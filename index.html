@@ -93,7 +93,24 @@
                         <div class="actions d-flex align-items-center px-4">
                             <i class="fa-solid fa-magnifying-glass headerIcon fs-4 ps-4"></i>
                             <i class="fa-solid fa-paperclip headerIcon fs-4 ps-4"></i>
-                            <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
+                            <div class="dropdown">
+                                <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="ChangeTheme">
+                                            <i class="fa-regular fa-image"></i>
+                                            <span>Cambia sfondo</span>
+                                        </div>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="CloseChat">
+                                            <i class="fa-solid fa-xmark"></i>
+                                            <span>Chiudi chat</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="formContent d-flex flex-column overflow-hidden" v-if="contactOpened.id>0">
