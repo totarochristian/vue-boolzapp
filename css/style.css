@@ -116,7 +116,7 @@
 }
 .message{
     background-color: var(--formWhiteColor);
-    min-width: 55%;
+    max-width: 55%;
     align-self: start;
 }
 .messageByMe{
