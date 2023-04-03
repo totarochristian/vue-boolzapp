@@ -94,11 +94,22 @@ createApp({
         //Deep-copy of tmp.contacts array in this.contacts var
         this.contacts = JSON.parse(JSON.stringify(tmp.contacts));
 
-        //Update field used to set preview times
+        //Do a series of operations on the contacts elements
         this.contacts.forEach(function(contact) {
+            //Update field used to set preview times
             contact.messages.forEach(function(message){
                 message.dateAbbreviation = GetContactLastMessageDate(message.date);
                 message.timeAbbreviation = GetCustomTimeString(new Date(message.date));
+            });
+            //Sort the messages arrays
+            contact.messages.sort((mess1,mess2)=>{
+                const date1 = new Date(mess1.date);
+                const date2 = new Date(mess2.date);
+                if(date1 < date2)
+                    return -1;
+                else if(date1 > date2)
+                    return 1;
+                return 0;
             });
         });
     },
