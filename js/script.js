@@ -16,7 +16,8 @@ createApp({
                 }
             },
             contacts: [],
-            chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"]
+            chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"],
+            accessStates: ["Sta scrivendo ...","Online"]
         }
     },
     methods:{
@@ -57,31 +58,52 @@ createApp({
                 this.SortContacts();
                 //Scroll down the messages div
                 this.MessagesScrollDown();
-                //Start a timeout (with random time) before the simulation of a random message from the contact
+                //Gets the index of the contact opened and call the Random Message By Contact method
                 const index = this.contacts.indexOf(this.contactOpened);
-                setTimeout(()=>{ this.RandomMessageByContact(index); },GetRandomInt(10000,1000));
+                this.RandomMessageByContact(index);
             }
         },
         RandomMessageByContact(index){
-            const tmpDate = GetCurrentDateTimeStringFormatted();
-            const obj = {
-                date: tmpDate,
-                dateAbbreviation: GetContactLastMessageDate(tmpDate),
-                timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
-                message: "ok",
-                status: "received",
-                toRead: this.contactOpened.id == this.contacts[index].id ? false : true
-            }
-            //Add the message to the array of messages
-            this.contacts[index].messages.push(obj);
-            //Play an audio to notify the user the new message
-            PlayAudio(this.profile.sounds.newMessage);
-            //Sort the contacts because of the new message
-            this.SortContacts();
-            //Scroll down the messages div to see the new message if the contact 
-            //that send the message is opened in the form right
-            if(this.contacts[index].id==this.contactOpened.id)
-                this.MessagesScrollDown();
+            //Wait for a random number of seconds before set the lastAccess as "Online"
+            setTimeout(()=>{
+                //Update the last access of the contacts that is sending the new message to "Online"
+                this.contacts[index].lastAccess = this.accessStates[1];
+                //Wait for a random number of seconds before set the lastAccess as "Sta scrivendo ..."
+                setTimeout(()=>{
+                    //Update the last access of the contacts that is sending the new message to "Sta scrivendo ..."
+                    this.contacts[index].lastAccess = this.accessStates[0];
+                    //Start a timeout (with random time) before the simulation of a random message from the contact
+                    setTimeout(()=>{
+                        const tmpDate = GetCurrentDateTimeStringFormatted();
+                        const obj = {
+                            date: tmpDate,
+                            dateAbbreviation: GetContactLastMessageDate(tmpDate),
+                            timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
+                            message: "ok",
+                            status: "received",
+                            toRead: this.contactOpened.id == this.contacts[index].id ? false : true
+                        }
+                        //Add the message to the array of messages
+                        this.contacts[index].messages.push(obj);
+                        //Update the last access of the contact that sented the message to "Online"
+                        this.contacts[index].lastAccess = this.accessStates[1];
+                        //Play an audio to notify the user the new message
+                        PlayAudio(this.profile.sounds.newMessage);
+                        //Sort the contacts because of the new message
+                        this.SortContacts();
+                        //Scroll down the messages div to see the new message if the contact 
+                        //that send the message is opened in the form right
+                        if(this.contacts[index].id==this.contactOpened.id)
+                            this.MessagesScrollDown();
+    
+                        //After sending the message, wait random  um of seconds before set the state as "offi alle xx:yy"
+                        setTimeout(()=>{
+                             //Update the last access of the contact that sented the message with the current time
+                            this.contacts[index].lastAccess = "oggi alle " + GetCustomTimeString(new Date(tmpDate));
+                        },GetRandomInt(10000,1000));
+                    },GetRandomInt(10000,1000));
+                },GetRandomInt(10000,1000));
+            },GetRandomInt(10000,1000));
         },
         /**
          * Function used to toggle the splash screen.
