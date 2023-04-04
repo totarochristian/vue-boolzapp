@@ -141,7 +141,10 @@ createApp({
          * Function used to set the new chat background using the tempModalResult value stored previously.
          */
         SaveNewChatBackground(){
+            //Set the contact opened background image using the index saved in the temp modal result var
             this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
+            //Reset to 0 the temp modal result saved
+            this.SetTempModalResult(0);
         },
         /**
          * Function used to scroll down the messages
