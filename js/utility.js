@@ -107,6 +107,13 @@ function GetRandomInt(max,min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+/**
+ * Function used to compare dates in ascending or descending order.
+ * @param {*} date1 Date 1 to be compared.
+ * @param {*} date2 Date 2 to be compared.
+ * @param {*} growing If true order ascending, otherwise descending.
+ * @returns If growing is true, returns -1 if date 1 is less then date 2, 1 if date 1 is greater then date 2, 0 if are equals, otherwise the opposite.
+ */
 function CompareDates(date1, date2, growing){
     if(date1 < date2)
         return growing ? -1 : 1;
