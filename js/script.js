@@ -58,20 +58,23 @@ createApp({
                 this.SortContacts();
                 //Scroll down the messages div
                 this.MessagesScrollDown();
-                //Gets the index of the contact opened and call the Random Message By Contact method
-                const index = this.contacts.indexOf(this.contactOpened);
-                this.RandomMessageByContact(index);
+                //Gets the id of the contact opened and call the Random Message By Contact method
+                const id = this.contactOpened.id;
+                this.RandomMessageByContact(id);
             }
         },
-        RandomMessageByContact(index){
+        RandomMessageByContact(tmp){
+            console.log(tmp);
+            const id = JSON.parse(JSON.stringify(tmp));
+            console.log(id);
             //Wait for a random number of seconds before set the lastAccess as "Online"
             setTimeout(()=>{
                 //Update the last access of the contacts that is sending the new message to "Online"
-                this.contacts[index].lastAccess = this.accessStates[1];
+                this.contacts[this.GetIndexOfContactById(id)].lastAccess = this.accessStates[1];
                 //Wait for a random number of seconds before set the lastAccess as "Sta scrivendo ..."
                 setTimeout(()=>{
                     //Update the last access of the contacts that is sending the new message to "Sta scrivendo ..."
-                    this.contacts[index].lastAccess = this.accessStates[0];
+                    this.contacts[this.GetIndexOfContactById(id)].lastAccess = this.accessStates[0];
                     //Start a timeout (with random time) before the simulation of a random message from the contact
                     setTimeout(()=>{
                         const tmpDate = GetCurrentDateTimeStringFormatted();
@@ -81,25 +84,25 @@ createApp({
                             timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
                             message: "ok",
                             status: "received",
-                            toRead: this.contactOpened.id == this.contacts[index].id ? false : true
+                            toRead: this.contactOpened.id == id ? false : true
                         }
                         //Add the message to the array of messages
-                        this.contacts[index].messages.push(obj);
+                        this.contacts[this.GetIndexOfContactById(id)].messages.push(obj);
                         //Update the last access of the contact that sented the message to "Online"
-                        this.contacts[index].lastAccess = this.accessStates[1];
+                        this.contacts[this.GetIndexOfContactById(id)].lastAccess = this.accessStates[1];
                         //Play an audio to notify the user the new message
                         PlayAudio(this.profile.sounds.newMessage);
                         //Sort the contacts because of the new message
                         this.SortContacts();
                         //Scroll down the messages div to see the new message if the contact 
                         //that send the message is opened in the form right
-                        if(this.contacts[index].id==this.contactOpened.id)
+                        if(this.contacts[this.GetIndexOfContactById(id)].id==this.contactOpened.id)
                             this.MessagesScrollDown();
     
                         //After sending the message, wait random  um of seconds before set the state as "offi alle xx:yy"
                         setTimeout(()=>{
                              //Update the last access of the contact that sented the message with the current time
-                            this.contacts[index].lastAccess = "oggi alle " + GetCustomTimeString(new Date(tmpDate));
+                            this.contacts[this.GetIndexOfContactById(id)].lastAccess = "oggi alle " + GetCustomTimeString(new Date(tmpDate));
                         },GetRandomInt(5000,1000));
                     },GetRandomInt(5000,1000));
                 },GetRandomInt(10000,1000));
@@ -188,6 +191,20 @@ createApp({
                 if(this.$refs.chatMessages.length>0)
                     this.$refs.chatMessages[this.$refs.chatMessages.length-1].scrollIntoView();
             });
+        },
+        /**
+         * Function used to search the index of the contact with the passed id inside the contacts list.
+         * @param {*} id Id to be searched inside the contacts array.
+         */
+        GetIndexOfContactById(id){
+            let res = 0;
+            this.contacts.forEach((contact,index)=>{
+                if(contact.id == id){
+                    res = index;
+                    return;
+                }
+            });
+            return res;
         }
     },
     async created(){
