@@ -65,9 +65,7 @@ createApp({
             }
         },
         RandomMessageByContact(tmp){
-            console.log(tmp);
             const id = JSON.parse(JSON.stringify(tmp));
-            console.log(id);
             //Wait for a random number of seconds before set the lastAccess as "Online"
             setTimeout(()=>{
                 //Update the last access of the contacts that is sending the new message to "Online"
