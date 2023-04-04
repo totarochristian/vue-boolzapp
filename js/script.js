@@ -138,6 +138,18 @@ createApp({
             this.tempModalResult = result;
         },
         /**
+         * Function used when user open the modal to chose the new chat background.
+         * This function will set the index in the temp modal result to visualize
+         * the current background selected if inside the array (otherwise set the 0);
+         */
+        OpenModalChoseChatBackground(){
+            let toSearch = this.contactOpened.backgroundImage.substring(this.contactOpened.backgroundImage.lastIndexOf('/') + 1, this.contactOpened.backgroundImage.length);
+            this.tempModalResult = this.chatBackgrounds.indexOf(toSearch);
+            //If not founded, set 0
+            if(this.tempModalResult < 0)
+                this.tempModalResult = 0;
+        },
+        /**
          * Function used to set the new chat background using the tempModalResult value stored previously.
          */
         SaveNewChatBackground(){
