@@ -119,8 +119,8 @@ createApp({
         SortContacts(){
             //Compare the dates defined in the descending order 
             this.contacts.sort((contact1,contact2)=>{
-                const date1 = new Date(contact1.messages[contact1.messages.length-1].date);
-                const date2 = new Date(contact2.messages[contact2.messages.length-1].date);
+                const date1 = contact1.messages.length > 0 ? new Date(contact1.messages[contact1.messages.length-1].date) : new Date();
+                const date2 = contact2.messages.length > 0 ? new Date(contact2.messages[contact2.messages.length-1].date) : new Date();
                 return CompareDates(date1, date2, false);
             });
         },
@@ -163,7 +163,8 @@ createApp({
          */
         MessagesScrollDown(){
             this.$nextTick(()=>{
-                this.$refs.chatMessages[this.$refs.chatMessages.length-1].scrollIntoView();
+                if(this.$refs.chatMessages.length>0)
+                    this.$refs.chatMessages[this.$refs.chatMessages.length-1].scrollIntoView();
             });
         }
     },

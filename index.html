@@ -69,10 +69,10 @@
                                         <img class="rounded-circle" :src="contact.avatar" :alt="'Avatar di '+contact.name" draggable="false">
                                         <div class="d-flex flex-column">
                                             <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
-                                            <span class="fw-semibold ps-2 fs-6 headerIcon">{{contact.messages[contact.messages.length-1].message}}</span>
+                                            <span class="fw-semibold ps-2 fs-6 headerIcon" v-if="contact.messages.length>0">{{contact.messages[contact.messages.length-1].message}}</span>
                                         </div>
                                     </div>
-                                    <div class="newMessageAndTime d-flex flex-column justify-content-between">
+                                    <div class="newMessageAndTime d-flex flex-column justify-content-between" v-if="contact.messages.length>0">
                                         <span class="fs-6 headerIcon" :class="contact.messages[contact.messages.length-1].toRead ? 'toRead' : ''">{{contact.messages[contact.messages.length-1].dateAbbreviation}}</span>
                                         <i class="fa-solid fa-circle fs-7 align-self-end" :class="contact.messages[contact.messages.length-1].toRead ? 'toRead' : 'invisible'"></i>
                                     </div>
@@ -122,7 +122,7 @@
                                         <span class="dropdown-toggle fs-4" data-bs-toggle="dropdown" aria-expanded="false"></span>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a class="dropdown-item d-flex align-items-center gap-2" @click="DeleteMessage(index)" :class="contactOpened.messages.length > 1 ? '' : 'disabled'">
+                                                <a class="dropdown-item d-flex align-items-center gap-2" @click="DeleteMessage(index)">
                                                     <i class="fa-regular fa-trash-can"></i>
                                                     <span>Elimina</span>
                                                 </a>
