@@ -100,10 +100,10 @@ createApp({
                         setTimeout(()=>{
                              //Update the last access of the contact that sented the message with the current time
                             this.contacts[index].lastAccess = "oggi alle " + GetCustomTimeString(new Date(tmpDate));
-                        },GetRandomInt(10000,1000));
-                    },GetRandomInt(10000,1000));
+                        },GetRandomInt(5000,1000));
+                    },GetRandomInt(5000,1000));
                 },GetRandomInt(10000,1000));
-            },GetRandomInt(10000,1000));
+            },GetRandomInt(5000,1000));
         },
         /**
          * Function used to toggle the splash screen.
