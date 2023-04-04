@@ -17,7 +17,8 @@ createApp({
             },
             contacts: [],
             chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"],
-            accessStates: ["Sta scrivendo ...","Online"]
+            accessStates: ["Sta scrivendo ...","Online"],
+            messagesToReturn: ["Ok","Va bene","Nessun problema","Ma stai bene?","Per caso sei caduto dalle scale?","Sei nato stupido o ti sei impegnato per diventarlo?","A volte non so se risponderti o continuare a farmi i cavoli miei!","Potresti pensare prima di parlare?","A volte non capisco se ci sei o ci fai..."]
         }
     },
     methods:{
@@ -82,7 +83,7 @@ createApp({
                             date: tmpDate,
                             dateAbbreviation: GetContactLastMessageDate(tmpDate),
                             timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
-                            message: "ok",
+                            message: this.GetRandomMessageToReturn(),
                             status: "received",
                             toRead: this.contactOpened.id == id ? false : true
                         }
@@ -205,6 +206,13 @@ createApp({
                 }
             });
             return res;
+        },
+        /**
+         * Function used to return a random message from the array messagesToReturn.
+         * @returns String containing a random message
+         */
+        GetRandomMessageToReturn(){
+            return this.messagesToReturn[GetRandomInt(this.messagesToReturn.length-1,0)];
         }
     },
     async created(){
