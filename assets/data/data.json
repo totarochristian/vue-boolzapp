@@ -5,7 +5,7 @@
             "name": "Filippo",
             "avatar": "./assets/images/profiles/avatar_1.jpg",
             "backgroundImage": "./assets/images/backgrounds/mine.webp",
-            "lastAccess": "oggi alle 12:00",
+            "lastAccess": "ieri alle 12:00",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -24,7 +24,7 @@
             "name": "Vito",
             "avatar": "./assets/images/profiles/avatar_2.jpg",
             "backgroundImage": "./assets/images/backgrounds/allRed.png",
-            "lastAccess": "oggi alle 11:10",
+            "lastAccess": "ieri alle 11:10",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -51,7 +51,7 @@
             "name": "Raffaele",
             "avatar": "./assets/images/profiles/avatar_3.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestDay.jpg",
-            "lastAccess": "oggi alle 9:06",
+            "lastAccess": "ieri alle 9:06",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -158,7 +158,7 @@
             "name": "Clelia",
             "avatar": "./assets/images/profiles/avatar_4.jpg",
             "backgroundImage": "./assets/images/backgrounds/forestDayRed.jpg",
-            "lastAccess": "oggi alle 11:35",
+            "lastAccess": "ieri alle 11:35",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -250,7 +250,7 @@
             "name": "Chiara",
             "avatar": "./assets/images/profiles/avatar_8.jpg",
             "backgroundImage": "./assets/images/backgrounds/manRed.webp",
-            "lastAccess": "oggi alle 6:06",
+            "lastAccess": "ieri alle 6:06",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
@@ -270,7 +270,7 @@
             "name": "Aniello",
             "avatar": "./assets/images/profiles/avatar_9.jpg",
             "backgroundImage": "./assets/images/backgrounds/mountainsBirds.webp",
-            "lastAccess": "oggi alle 00:17",
+            "lastAccess": "ieri alle 00:17",
             "visible": true,
             "newMessageToSend": "",
             "messages": [
