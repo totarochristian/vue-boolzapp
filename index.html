@@ -60,7 +60,7 @@
                             <span class="input-group-text bg-white px-4" id="searchChatIcon">
                                 <i class="fa-solid fa-magnifying-glass headerIcon"></i>
                             </span>
-                            <input id="searchChat" v-model="chatToSearch" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon" @change="SearchContact">
+                            <input id="searchChat" v-model.trim="chatToSearch" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon" @change="SearchContact">
                         </div>
                         <div id="contactsList" class="d-flex flex-column overflow-y-auto">
                             <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded m-1 mb-0" :class="contact.visible==true? (contact.id == contactOpened.id ? 'active' : '') :'d-none'">
@@ -135,7 +135,7 @@
                         </div>
                         <div id="writeMessagesDiv" class="d-flex justify-content-around align-items-center">
                             <i class="fa-regular fa-face-smile conversationBarColor fs-4 flex-fill text-center"></i>
-                            <input type="text" name="messageToSend" id="messageToSend" class="conversationBarColor rounded border-0 fs-6 col-10 p-2" v-model="contactOpened.newMessageToSend" placeholder="Scrivi un messaggio" @keyup.enter="SendNewMessage">
+                            <input type="text" name="messageToSend" id="messageToSend" class="conversationBarColor rounded border-0 fs-6 col-10 p-2" v-model.trim="contactOpened.newMessageToSend" placeholder="Scrivi un messaggio" @keyup.enter="SendNewMessage">
                             <i class="fa-solid fa-microphone conversationBarColor fs-4 flex-fill text-center"></i>
                         </div>
                     </div>
