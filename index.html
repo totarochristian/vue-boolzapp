@@ -115,7 +115,7 @@
                     </div>
                     <div class="formContent d-flex flex-column overflow-hidden" v-if="contactOpened.id>0">
                         <div id="readMessagesDiv" class="d-flex flex-column overflow-y-auto" :style="'background-image: url('+contactOpened.backgroundImage+');'">
-                            <div :id="'message'+index" v-for="(message,index) in contactOpened.messages" v-if="contactOpened.messages.length > 0" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
+                            <div :id="'message'+index" ref="chatMessages" v-for="(message,index) in contactOpened.messages" v-if="contactOpened.messages.length > 0" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
                                 <div class="d-flex">
                                     <span class="p-3 pb-1">{{message.message}}</span>
                                     <div class="dropdown align-self-end p-2">

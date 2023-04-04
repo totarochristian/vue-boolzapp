@@ -32,6 +32,8 @@ createApp({
                 if(message.toRead)
                     message.toRead = false;
             });
+            //Scroll down the messages div
+            this.MessagesScrollDown();
         },
         /**
          * Function used to send a new message to an opened contact.
@@ -53,9 +55,11 @@ createApp({
                 this.contactOpened.newMessageToSend = '';
                 //Sort the contacts because of the new message
                 this.SortContacts();
+                //Scroll down the messages div
+                this.MessagesScrollDown();
                 //Start a timeout (with random time) before the simulation of a random message from the contact
                 const index = this.contacts.indexOf(this.contactOpened);
-                setTimeout(()=>{this.RandomMessageByContact(index)},GetRandomInt(10000,1000));
+                setTimeout(()=>{ this.RandomMessageByContact(index); },GetRandomInt(10000,1000));
             }
         },
         RandomMessageByContact(index){
@@ -74,6 +78,10 @@ createApp({
             PlayAudio(this.profile.sounds.newMessage);
             //Sort the contacts because of the new message
             this.SortContacts();
+            //Scroll down the messages div to see the new message if the contact 
+            //that send the message is opened in the form right
+            if(this.contacts[index].id==this.contactOpened.id)
+                this.MessagesScrollDown();
         },
         /**
          * Function used to toggle the splash screen.
@@ -134,6 +142,14 @@ createApp({
          */
         SaveNewChatBackground(){
             this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
+        },
+        /**
+         * Function used to scroll down the messages
+         */
+        MessagesScrollDown(){
+            this.$nextTick(()=>{
+                this.$refs.chatMessages[this.$refs.chatMessages.length-1].scrollIntoView();
+            });
         }
     },
     async created(){
