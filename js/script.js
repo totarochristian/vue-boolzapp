@@ -18,7 +18,7 @@ createApp({
             contacts: [],
             chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"],
             accessStates: ["Sta scrivendo ...","Online"],
-            messagesToReturn: ["Ok","Va bene","Nessun problema","Ma stai bene?","Per caso sei caduto dalle scale?","Sei nato stupido o ti sei impegnato per diventarlo?","A volte non so se risponderti o continuare a farmi i cavoli miei!","Potresti pensare prima di parlare?","A volte non capisco se ci sei o ci fai..."]
+            messagesToReturn: ["Ok","Va bene","Nessun problema","Ma stai bene?","Per caso sei caduto dalle scale?","Sei nato stupido o ti sei impegnato per diventarlo?","A volte non so se risponderti o continuare a farmi i cavoli miei!","Potresti pensare prima di parlare?","A volte non capisco se ci sei o ci fai...","Buongiorno!","Alla buon ora...","Non ci posso credere...","No!","Sei libero il prossimo sabato?","Vediamoci una di queste sere","Ah, ma allora mi pensi ogni tanto.. non ci sentiamo da un sacco di tempo!","Guarda chi è resuscitato dalla tomba! Come stai?"]
         }
     },
     methods:{
