@@ -83,7 +83,7 @@ createApp({
                 this.RandomMessageByContact(id);
             }
         },
-        RandomMessageByContact(tmp){
+        RandomMessageByContact(tmp,msg){
             const id = JSON.parse(JSON.stringify(tmp));
             //Wait for a random number of seconds before set the lastAccess as "Online"
             setTimeout(()=>{
@@ -100,7 +100,7 @@ createApp({
                             date: tmpDate,
                             dateAbbreviation: GetContactLastMessageDate(tmpDate),
                             timeAbbreviation: GetCustomTimeString(new Date(tmpDate)),
-                            message: this.GetRandomMessageToReturn(),
+                            message: msg ? msg : this.GetRandomMessageToReturn(),
                             status: "received",
                             toRead: this.contactOpened.id == id ? false : true
                         }
@@ -337,6 +337,45 @@ createApp({
             this.profile.sounds.deleteMessage = './assets/sounds/delete/' + this.deleteMessageSounds[this.tempModalResult];
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
+        },
+        /**
+         * Function used to add a new contact to the array of contacts (will use data inside the object tempNewContact).
+         */
+        CreateNewContact(){
+            this.tempNewContact.id=this.GetNewContactId();
+            //Deep copy of the temp new contact defined by the user and push to contact list
+            this.contacts.push(JSON.parse(JSON.stringify(this.tempNewContact)));
+            this.RandomMessageByContact(this.tempNewContact.id,"Ciao "+this.profile.name+", grazie per avermi aggiunto ai tuoi contatti!");
+            //Sort the contacts because of the adding of new contact
+            this.SortContacts();
+            //Reset the tempNewContact as template
+            this.ResetNewContact();
+        },
+        /**
+         * Function used to reset the as template the temp new contact object
+         */
+        ResetNewContact(){
+            this.tempNewContact = {
+                "id": -1,
+                "name": "",
+                "avatar": "./assets/images/profiles/avatar_1.jpg",
+                "backgroundImage": "./assets/images/backgrounds/mine.webp",
+                "lastAccess": "ieri alle 6:66",
+                "visible": true,
+                "newMessageToSend": "",
+                "messages": []
+            };
+        },
+        /**
+         * Function that will return a free id
+         * @returns New free id that could be assigned to a new contact
+         */
+        GetNewContactId(){
+            let newId = 0;
+            this.contacts.forEach((contact)=>{
+                newId = contact.id>newId ? contact.id+1 : newId;
+            });
+            return newId;
         }
     },
     async created(){
