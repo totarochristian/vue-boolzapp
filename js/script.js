@@ -400,7 +400,7 @@ createApp({
         GetNewContactId(){
             let newId = 1;
             this.contacts.forEach((contact)=>{
-                newId = contact.id>newId ? contact.id+1 : newId;
+                newId = contact.id>=newId ? contact.id+1 : newId;
             });
             return newId;
         },
