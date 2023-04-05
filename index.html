@@ -46,7 +46,7 @@
                         </div>
                         <div class="actions d-flex align-items-center px-4">
                             <i class="fa-solid fa-circle-notch headerIcon fs-4 ps-4"></i>
-                            <i class="fa-solid fa-message headerIcon fs-4 ps-4"></i>
+                            <i class="dropdown-toggle fa-solid fa-message headerIcon fs-4 ps-4" data-bs-toggle="modal" data-bs-target="#newContact" @click="OpenCloseNewContactModal(true)"></i>
                             <div class="dropdown">
                                 <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
                                 <ul class="dropdown-menu">
@@ -233,6 +233,33 @@
                             <i class="fa-solid fa-lock"></i>
                             <span>Con crittografia end-to-end</span>
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Modal used to define a new contact -->
+        <div class="modal fade modal-xl" id="newContact" ref="newContact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Creazione nuovo contatto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="OpenCloseNewContactModal(false)"></button>
+                    </div>
+                    <div class="modal-body overflow-y-auto">
+                        <div class="d-flex justify-content-center align-items-center p-4 flex-wrap" v-if="chatBackgrounds.length > 1">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="image" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseChatBackground">
+                                    <img :src="tempNewContact.backgroundImage" alt="Sfondo nuovo contatto">
+                                </div>
+                                <div class="image" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseProfilePicture">
+                                    <img :src="tempNewContact.avatar" alt="Foto profilo nuovo contatto">
+                                </div>
+                            </div>
+                            <input type="text" id="tempNewContactName" name="tempNewContactName" v-model="tempNewContact.name">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="OpenCloseNewContactModal(false)">Chiudi</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="CreateNewContact()">Salva modifiche</button>
                     </div>
                 </div>
             </div>

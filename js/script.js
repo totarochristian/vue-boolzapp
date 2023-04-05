@@ -10,6 +10,7 @@ createApp({
             modalTypeOpened: 0,
             tempModalResult: '',
             contactOpened: { id: -1 },
+            newContactModalOpened: false,
             profile:{
                 name: 'Christian',
                 avatar: "./assets/images/profiles/avatar_2.jpg",
@@ -179,6 +180,11 @@ createApp({
          */
         SetTempModalResult(result){
             this.tempModalResult = result;
+            //If new contact modal was opened before
+            if(this.newContactModalOpened){
+                //Force the show of the new contact modal
+                this.$refs.newContact.classList.add("show");
+            }
         },
         /**
          * Function used when user open the modal to chose the new chat background.
@@ -187,7 +193,7 @@ createApp({
          */
         OpenModalChoseChatBackground(){
             this.modalTypeOpened = 0;
-            let toSearch = this.contactOpened.backgroundImage.substring(this.contactOpened.backgroundImage.lastIndexOf('/') + 1, this.contactOpened.backgroundImage.length);
+            let toSearch = !this.newContactModalOpened ? this.contactOpened.backgroundImage.substring(this.contactOpened.backgroundImage.lastIndexOf('/') + 1, this.contactOpened.backgroundImage.length) : this.tempNewContact.backgroundImage.substring(this.tempNewContact.backgroundImage.lastIndexOf('/') + 1, this.tempNewContact.backgroundImage.length);
             this.tempModalResult = this.chatBackgrounds.indexOf(toSearch);
             //If not founded, set 0
             if(this.tempModalResult < 0)
@@ -197,8 +203,13 @@ createApp({
          * Function used to set the new chat background using the tempModalResult value stored previously.
          */
         SaveNewChatBackground(){
-            //Set the contact opened background image using the index saved in the temp modal result var
-            this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
+            if(this.newContactModalOpened){
+                //Set the temp new contact background image using the index saved in the temp modal result var
+                this.tempNewContact.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
+            }else{
+                //Set the contact opened background image using the index saved in the temp modal result var
+                this.contactOpened.backgroundImage = './assets/images/backgrounds/' + this.chatBackgrounds[this.tempModalResult];
+            }
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
         },
@@ -207,7 +218,7 @@ createApp({
          */
         MessagesScrollDown(){
             this.$nextTick(()=>{
-                if(this.$refs.chatMessages.length>0)
+                if(this.$refs.chatMessages != undefined && this.$refs.chatMessages.length>0)
                     this.$refs.chatMessages[this.$refs.chatMessages.length-1].scrollIntoView();
             });
         },
@@ -239,7 +250,7 @@ createApp({
          */
         OpenModalChoseProfilePicture(){
             this.modalTypeOpened = 1;
-            let toSearch = this.profile.avatar.substring(this.profile.avatar.lastIndexOf('/') + 1, this.profile.avatar.length);
+            let toSearch = !this.newContactModalOpened ? this.profile.avatar.substring(this.profile.avatar.lastIndexOf('/') + 1, this.profile.avatar.length) : this.tempNewContact.avatar.substring(this.tempNewContact.avatar.lastIndexOf('/') + 1, this.tempNewContact.avatar.length);
             this.tempModalResult = this.profilePictures.indexOf(toSearch);
             //If not founded, set 0
             if(this.tempModalResult < 0)
@@ -249,8 +260,13 @@ createApp({
          * Function used to set the new profile picture using the tempModalResult value stored previously.
          */
         SaveNewProfilePicture(){
-            //Set the contact opened background image using the index saved in the temp modal result var
-            this.profile.avatar = './assets/images/profiles/' + this.profilePictures[this.tempModalResult];
+            if(this.newContactModalOpened){
+                //Set the temp new contact background image using the index saved in the temp modal result var
+                this.tempNewContact.avatar = './assets/images/profiles/' + this.profilePictures[this.tempModalResult];
+            }else{
+                //Set the contact opened background image using the index saved in the temp modal result var
+                this.profile.avatar = './assets/images/profiles/' + this.profilePictures[this.tempModalResult];
+            }
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
         },
@@ -371,12 +387,15 @@ createApp({
          * @returns New free id that could be assigned to a new contact
          */
         GetNewContactId(){
-            let newId = 0;
+            let newId = 1;
             this.contacts.forEach((contact)=>{
                 newId = contact.id>newId ? contact.id+1 : newId;
             });
             return newId;
-        }
+        },
+        OpenCloseNewContactModal(state){
+            this.newContactModalOpened = state;
+        },
     },
     async created(){
         const tmp = await LoadJsonFile();
