@@ -173,7 +173,10 @@
                             </div>
                         </div>
                         <div id="writeMessagesDiv" class="d-flex justify-content-around align-items-center">
-                            <i class="fa-regular fa-face-smile conversationBarColor fs-4 flex-fill text-center"></i>
+                            <div class="flex-fill text-center">
+                                <i class="fa-regular fa-face-smile conversationBarColor fs-4" @click="showEmojiPicker=!showEmojiPicker"></i>
+                                <Picker id="emojiPicker" @select="onSelectEmoji" class="m-1" :class="{'d-none': !showEmojiPicker}" />
+                            </div>
                             <input type="text" name="messageToSend" id="messageToSend" class="conversationBarColor rounded border-0 fs-6 col-10 p-2" v-model.trim="contactOpened.newMessageToSend" placeholder="Scrivi un messaggio" @keyup.enter="SendNewMessage">
                             <i class="fa-solid fa-paper-plane conversationBarColor fs-4 flex-fill text-center" v-if="contactOpened.newMessageToSend!=''" @click="SendNewMessage"></i>
                             <i class="fa-solid fa-microphone conversationBarColor fs-4 flex-fill text-center" v-else></i>

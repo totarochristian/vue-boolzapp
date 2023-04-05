@@ -53,6 +53,7 @@
 #writeMessagesDiv{
     height: var(--writeMessagedDivHeight);
     background-color: var(--formConversationBarColor);
+    position: relative;
 }
 #readMessagesDiv{
     height: calc(100% - var(--writeMessagedDivHeight));
@@ -279,4 +280,9 @@
 #splashScreen>div{
     width: var(--splashSize);
     height: var(--splashSize);
+}
+#emojiPicker {
+    position: absolute;
+    left: 0;
+    bottom: var(--writeMessagedDivHeight);
 }

@@ -5,6 +5,7 @@ createApp({
     data(){
         return {
             splashVisibility: true,
+            showEmojiPicker: false,
             chatToSearch: '',
             modalTypeOpened: 0,
             tempModalResult: '',
@@ -57,6 +58,8 @@ createApp({
                 }
                 //Add the message to the array of messages
                 this.contactOpened.messages.push(obj);
+                //Hide the emoji picker if opened
+                this.showEmojiPicker=false;
                 //Cancel the value inside the newMessageToSend
                 this.contactOpened.newMessageToSend = '';
                 //Sort the contacts because of the new message
@@ -259,6 +262,19 @@ createApp({
         DeleteAllContacts(){
             this.CloseChat();
             this.contacts.splice(0,this.contacts.length);
+        },
+        onSelectEmoji(emoji) {
+            this.contactOpened.newMessageToSend += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
         }
     },
     async created(){
