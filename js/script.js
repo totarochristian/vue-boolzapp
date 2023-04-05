@@ -277,6 +277,28 @@ createApp({
                   u: "1f61a" // without tone
               }
               */
+        },
+        /**
+         * Function used when user open the modal to chose the new profile picture.
+         * This function will set the index in the temp modal result to visualize
+         * the current profile image selected if inside the array (otherwise set the 0);
+         */
+        OpenModalChoseNewMessageSound(){
+            this.modalTypeOpened = 2;
+            let toSearch = this.profile.sounds.newMessage.substring(this.profile.sounds.newMessage.lastIndexOf('/') + 1, this.profile.sounds.newMessage.length);
+            this.tempModalResult = this.newMessageSounds.indexOf(toSearch);
+            //If not founded, set 0
+            if(this.tempModalResult < 0)
+                this.tempModalResult = 0;
+        },
+        /**
+         * Function used to set the new profile picture using the tempModalResult value stored previously.
+         */
+        SaveNewMessageSound(){
+            //Set the contact opened background image using the index saved in the temp modal result var
+            this.profile.sounds.newMessage = './assets/sounds/new/' + this.newMessageSounds[this.tempModalResult];
+            //Reset to 0 the temp modal result saved
+            this.SetTempModalResult(0);
         }
     },
     async created(){

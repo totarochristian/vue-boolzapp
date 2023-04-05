@@ -56,6 +56,12 @@
                                             <span>Cambia foto profilo</span>
                                         </div>
                                     </li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseNewMessageSound">
+                                            <i class="fa-solid fa-id-card-clip"></i>
+                                            <span>Impostazioni audio</span>
+                                        </div>
+                                    </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteForEachChatAllMessages" :class="contacts.length>0?'':'disabled'">
@@ -233,6 +239,29 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Chiudi</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveNewProfilePicture()">Salva modifiche</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal used to make the user chose the new message sound -->
+            <div class="modal-dialog" v-if="modalTypeOpened==2">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Scegli il suono per notificare l'arrivo di un nuovo messaggio</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="SetTempModalResult(0)"></button>
+                    </div>
+                    <div class="modal-body overflow-y-auto">
+                        <div class="d-flex justify-content-center align-items-center p-4 flex-wrap gap-2" v-if="newMessageSounds.length > 1">
+                            <div class="audioElem p-4 rounded-4 d-flex flex-column justify-content-center" v-for="(sound,index) in newMessageSounds" @click="SetTempModalResult(index)" :class="index == tempModalResult ? 'selectedAudio' : ''">
+                                <p class="fs-5 fw-semibold">Traccia {{index+1}}</p>
+                                <audio controls>
+                                    <source :src="'./assets/sounds/new/'+sound" type="audio/mpeg" :alt="'Audio '+index" />
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Chiudi</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveNewMessageSound()">Salva modifiche</button>
                     </div>
                 </div>
             </div>

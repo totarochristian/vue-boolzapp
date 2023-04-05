@@ -286,3 +286,13 @@
     left: 0;
     bottom: var(--writeMessagedDivHeight);
 }
+.audioElem{
+    border: 3px solid transparent;
+    cursor: pointer;
+}
+.audioElem:hover,.selectedAudio{
+    border: 3px solid var(--messageSentedByMeColor);
+}
+.audioElem:hover>audio::-webkit-media-controls-panel,.selectedAudio>audio::-webkit-media-controls-panel{
+    background-color: var(--messageSentedByMeColor);
+}
