@@ -16,6 +16,7 @@
     --headerHeight: 70px;
     --writeMessagedDivHeight: 70px;
     --bellSize: 50px;
+    --splashSize: 250px;
 }
 #app,#mainContainer,#splashScreen{ 
     width: 100%; 
@@ -274,4 +275,8 @@
 .conversationBarColor:hover{
     color: var(--formConversationBarIconsColorDark);
     cursor: pointer;
+}
+#splashScreen>div{
+    width: var(--splashSize);
+    height: var(--splashSize);
 }
