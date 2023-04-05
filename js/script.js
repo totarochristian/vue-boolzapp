@@ -367,7 +367,7 @@ createApp({
                 this.tempNewContact.id=this.GetNewContactId();
                 //Deep copy of the temp new contact defined by the user and push to contact list
                 this.contacts.push(JSON.parse(JSON.stringify(this.tempNewContact)));
-                this.RandomMessageByContact(this.tempNewContact.id,"Ciao "+this.profile.name+", grazie per avermi aggiunto ai tuoi contatti!");
+                this.RandomMessageByContact(this.tempNewContact.id,"Ciao "+this.profile.name+", sono "+this.tempNewContact.name+"... grazie per avermi aggiunto ai tuoi contatti!");
                 //Sort the contacts because of the adding of new contact
                 this.SortContacts();
                 //Reset the tempNewContact as template
