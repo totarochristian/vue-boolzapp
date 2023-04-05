@@ -279,9 +279,9 @@ createApp({
               */
         },
         /**
-         * Function used when user open the modal to chose the new profile picture.
+         * Function used when user open the modal to chose the sound of new message.
          * This function will set the index in the temp modal result to visualize
-         * the current profile image selected if inside the array (otherwise set the 0);
+         * the current new message sound selected if inside the array (otherwise set the 0);
          */
         OpenModalChoseNewMessageSound(){
             this.modalTypeOpened = 2;
@@ -292,7 +292,7 @@ createApp({
                 this.tempModalResult = 0;
         },
         /**
-         * Function used to set the new profile picture using the tempModalResult value stored previously.
+         * Function used to set the new message sound using the tempModalResult value stored previously.
          */
         SaveNewMessageSound(){
             //Set the contact opened background image using the index saved in the temp modal result var
@@ -301,9 +301,9 @@ createApp({
             this.SetTempModalResult(0);
         },
         /**
-         * Function used when user open the modal to chose the new profile picture.
+         * Function used when user open the modal to chose the sound of remove message.
          * This function will set the index in the temp modal result to visualize
-         * the current profile image selected if inside the array (otherwise set the 0);
+         * the current remove message sound selected if inside the array (otherwise set the 0);
          */
         OpenModalChoseRemoveMessageSound(){
             this.modalTypeOpened = 3;
@@ -314,7 +314,7 @@ createApp({
                 this.tempModalResult = 0;
         },
         /**
-         * Function used to set the new profile picture using the tempModalResult value stored previously.
+         * Function used to set the remove message sound using the tempModalResult value stored previously.
          */
         SaveRemoveMessageSound(){
             //Set the contact opened background image using the index saved in the temp modal result var
