@@ -318,7 +318,7 @@ createApp({
          */
         SaveRemoveMessageSound(){
             //Set the contact opened background image using the index saved in the temp modal result var
-            this.profile.sounds.deleteMessage = './assets/sounds/new/' + this.deleteMessageSounds[this.tempModalResult];
+            this.profile.sounds.deleteMessage = './assets/sounds/delete/' + this.deleteMessageSounds[this.tempModalResult];
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
         }
