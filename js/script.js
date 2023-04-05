@@ -18,6 +18,7 @@ createApp({
             },
             contacts: [],
             chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"],
+            profilePictures: ["avatar_1.jpg","avatar_2.jpg","avatar_3.jpg","avatar_4.jpg","avatar_5.jpg","avatar_6.jpg","avatar_7.jpg","avatar_8.jpg","avatar_9.jpg"],
             accessStates: ["Sta scrivendo ...","Online"],
             messagesToReturn: ["Ok","Va bene","Nessun problema","Ma stai bene?","Per caso sei caduto dalle scale?","Sei nato stupido o ti sei impegnato per diventarlo?","A volte non so se risponderti o continuare a farmi i cavoli miei!","Potresti pensare prima di parlare?","A volte non capisco se ci sei o ci fai...","Buongiorno!","Alla buon ora...","Non ci posso credere...","No!","Sei libero il prossimo sabato?","Vediamoci una di queste sere","Ah, ma allora mi pensi ogni tanto.. non ci sentiamo da un sacco di tempo!","Guarda chi è resuscitato dalla tomba! Come stai?"]
         }
@@ -213,6 +214,28 @@ createApp({
          */
         GetRandomMessageToReturn(){
             return this.messagesToReturn[GetRandomInt(this.messagesToReturn.length-1,0)];
+        },
+        /**
+         * Function used when user open the modal to chose the new profile picture.
+         * This function will set the index in the temp modal result to visualize
+         * the current profile image selected if inside the array (otherwise set the 0);
+         */
+        OpenModalChoseProfilePicture(){
+            this.modalTypeOpened = 1;
+            let toSearch = this.profile.avatar.substring(this.profile.avatar.lastIndexOf('/') + 1, this.profile.avatar.length);
+            this.tempModalResult = this.profilePictures.indexOf(toSearch);
+            //If not founded, set 0
+            if(this.tempModalResult < 0)
+                this.tempModalResult = 0;
+        },
+        /**
+         * Function used to set the new profile picture using the tempModalResult value stored previously.
+         */
+        SaveNewProfilePicture(){
+            //Set the contact opened background image using the index saved in the temp modal result var
+            this.profile.avatar = './assets/images/profiles/' + this.profilePictures[this.tempModalResult];
+            //Reset to 0 the temp modal result saved
+            this.SetTempModalResult(0);
         }
     },
     async created(){

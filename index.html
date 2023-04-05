@@ -152,8 +152,9 @@
                 </div>
             </div>
         </div>
-        <!-- Modal used to make the user chose the backgrounds of a chat -->
+        <!-- Modals containing all the modal-dialog that user could open -->
         <div class="modal fade modal-xl" id="choseChatBackground" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <!-- Modal used to make the user chose the backgrounds of a chat -->
             <div class="modal-dialog" v-if="modalTypeOpened==0">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -170,6 +171,26 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Close</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveNewChatBackground()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal used to make the user chose his profile picture -->
+            <div class="modal-dialog" v-if="modalTypeOpened==1">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Scegli la tua nuova foto profilo</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="SetTempModalResult(0)"></button>
+                    </div>
+                    <div class="modal-body overflow-y-auto">
+                        <div class="d-flex justify-content-center align-items-center p-4 flex-wrap" v-if="profilePictures.length > 1">
+                            <div class="image" v-for="(picture,index) in profilePictures" @click="SetTempModalResult(index)" :class="index == tempModalResult ? 'selectedBackground' : ''">
+                                <img :src="'./assets/images/profiles/'+picture" :alt="'Foto profilo '+index">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveNewProfilePicture()">Save changes</button>
                     </div>
                 </div>
             </div>
