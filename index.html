@@ -237,7 +237,7 @@
                 </div>
             </div>
         </div><!-- Modal used to define a new contact -->
-        <div class="modal fade modal-xl" id="newContact" ref="newContact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="newContact" ref="newContact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -246,15 +246,18 @@
                     </div>
                     <div class="modal-body overflow-y-auto">
                         <div class="d-flex justify-content-center align-items-center p-4 flex-wrap" v-if="chatBackgrounds.length > 1">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="image" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseChatBackground">
-                                    <img :src="tempNewContact.backgroundImage" alt="Sfondo nuovo contatto">
+                            <div class="d-flex flex-column justify-content-center align-items-center gap-4">
+                                <div id="newContactEditProfile">
+                                    <i class="fa-regular fa-pen-to-square text-white"></i>
+                                    <div data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseProfilePicture">
+                                        <img class="rounded-circle" :src="tempNewContact.avatar" alt="Foto profilo nuovo contatto">
+                                    </div>
                                 </div>
-                                <div class="image" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseProfilePicture">
-                                    <img :src="tempNewContact.avatar" alt="Foto profilo nuovo contatto">
+                                <div class="d-flex flex-column">
+                                    <label for="tempNewContactName" class="fs-5 fw-semibold">Nome del contatto:</label>
+                                    <input type="text" id="tempNewContactName" name="tempNewContactName" v-model="tempNewContact.name">
                                 </div>
                             </div>
-                            <input type="text" id="tempNewContactName" name="tempNewContactName" v-model="tempNewContact.name">
                         </div>
                     </div>
                     <div class="modal-footer">

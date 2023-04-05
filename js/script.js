@@ -183,7 +183,12 @@ createApp({
             //If new contact modal was opened before
             if(this.newContactModalOpened){
                 //Force the show of the new contact modal
+                this.$refs.newContact.style.display = "block";
                 this.$refs.newContact.classList.add("show");
+            }else{
+                //Force the hide of the new contact modal
+                this.$refs.newContact.style.display = "none";
+                this.$refs.newContact.classList.remove("show");
             }
         },
         /**
@@ -358,14 +363,20 @@ createApp({
          * Function used to add a new contact to the array of contacts (will use data inside the object tempNewContact).
          */
         CreateNewContact(){
-            this.tempNewContact.id=this.GetNewContactId();
-            //Deep copy of the temp new contact defined by the user and push to contact list
-            this.contacts.push(JSON.parse(JSON.stringify(this.tempNewContact)));
-            this.RandomMessageByContact(this.tempNewContact.id,"Ciao "+this.profile.name+", grazie per avermi aggiunto ai tuoi contatti!");
-            //Sort the contacts because of the adding of new contact
-            this.SortContacts();
-            //Reset the tempNewContact as template
-            this.ResetNewContact();
+            if(this.tempNewContact.name){
+                this.tempNewContact.id=this.GetNewContactId();
+                //Deep copy of the temp new contact defined by the user and push to contact list
+                this.contacts.push(JSON.parse(JSON.stringify(this.tempNewContact)));
+                this.RandomMessageByContact(this.tempNewContact.id,"Ciao "+this.profile.name+", grazie per avermi aggiunto ai tuoi contatti!");
+                //Sort the contacts because of the adding of new contact
+                this.SortContacts();
+                //Reset the tempNewContact as template
+                this.ResetNewContact();
+                //Set to false because the contact modal have to be closed after creation of new contact.
+                this.OpenCloseNewContactModal(false);
+                //Reset to 0 the temp modal result saved
+                this.SetTempModalResult(0);
+            }
         },
         /**
          * Function used to reset the as template the temp new contact object
@@ -395,6 +406,10 @@ createApp({
         },
         OpenCloseNewContactModal(state){
             this.newContactModalOpened = state;
+            if(!state){
+                //Reset to 0 the temp modal result saved
+                this.SetTempModalResult(0);
+            }
         },
     },
     async created(){

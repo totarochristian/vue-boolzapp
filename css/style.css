@@ -296,3 +296,26 @@
 .audioElem:hover>audio::-webkit-media-controls-panel,.selectedAudio>audio::-webkit-media-controls-panel{
     background-color: var(--messageSentedByMeColor);
 }
+#newContactEditProfile{
+    position: relative;
+    cursor: pointer;
+}
+#newContactEditProfile img{
+    width: 200px;
+    height: 200px;
+}
+#newContactEditProfile i{
+    position: absolute;
+    font-size: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    z-index: 1000;
+}
+#newContactEditProfile:hover i{
+    opacity: 1;
+}
+#newContactEditProfile:hover img{
+    filter: brightness(90%);
+}
