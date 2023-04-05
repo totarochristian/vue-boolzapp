@@ -299,6 +299,28 @@ createApp({
             this.profile.sounds.newMessage = './assets/sounds/new/' + this.newMessageSounds[this.tempModalResult];
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
+        },
+        /**
+         * Function used when user open the modal to chose the new profile picture.
+         * This function will set the index in the temp modal result to visualize
+         * the current profile image selected if inside the array (otherwise set the 0);
+         */
+        OpenModalChoseRemoveMessageSound(){
+            this.modalTypeOpened = 3;
+            let toSearch = this.profile.sounds.deleteMessage.substring(this.profile.sounds.deleteMessage.lastIndexOf('/') + 1, this.profile.sounds.deleteMessage.length);
+            this.tempModalResult = this.deleteMessageSounds.indexOf(toSearch);
+            //If not founded, set 0
+            if(this.tempModalResult < 0)
+                this.tempModalResult = 0;
+        },
+        /**
+         * Function used to set the new profile picture using the tempModalResult value stored previously.
+         */
+        SaveRemoveMessageSound(){
+            //Set the contact opened background image using the index saved in the temp modal result var
+            this.profile.sounds.deleteMessage = './assets/sounds/new/' + this.deleteMessageSounds[this.tempModalResult];
+            //Reset to 0 the temp modal result saved
+            this.SetTempModalResult(0);
         }
     },
     async created(){
