@@ -54,9 +54,15 @@
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
-                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteForEachChatAllMessages">
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteForEachChatAllMessages" :class="contacts.length>0?'':'disabled'">
                                             <i class="fa-solid fa-broom"></i>
                                             <span>Cancella tutti i messaggi</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteAllContacts" :class="contacts.length>0?'':'disabled'">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                            <span>Elimina tutti i contatti</span>
                                         </div>
                                     </li>
                                     <li>

@@ -250,6 +250,13 @@ createApp({
             this.contacts.forEach((contact)=>{
                 contact.messages.splice(0,contact.messages.length);
             });
+        },
+        /**
+         * Function used to close the opened chat and delete all the contacts
+         */
+        DeleteAllContacts(){
+            this.CloseChat();
+            this.contacts.splice(0,this.contacts.length);
         }
     },
     async created(){
