@@ -1,0 +1,40 @@
+in head html (ho i due file nella cartella js):
+
+<script src="./js/emoji-picker.js" type="module"></script>
+<link rel="stylesheet" href="./js/style.css">
+
+il nostro script deve essere con type=module
+ <script src="./js/script.js" type="module"></script>
+
+
+
+in script.js:
+
+import Picker from './emoji-picker.js';
+....
+createApp({
+   .....
+}).component('Picker', Picker).mount('#app');
+
+in methods:
+
+  onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.messageText += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
+        },
+
+
+
+in html:
+
+ <Picker @select="onSelectEmoji" class="mia" :class="{'d-none': !showEmoji}" />
