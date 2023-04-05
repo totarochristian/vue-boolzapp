@@ -54,6 +54,12 @@
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteForEachChatAllMessages">
+                                            <i class="fa-solid fa-broom"></i>
+                                            <span>Cancella tutti i messaggi</span>
+                                        </div>
+                                    </li>
+                                    <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" @click="CloseChat" :class="contactOpened.id>0?'':'disabled'">
                                             <i class="fa-solid fa-xmark"></i>
                                             <span>Chiudi chat attiva</span>
@@ -120,6 +126,12 @@
                                         </div>
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteChatMessages">
+                                            <i class="fa-solid fa-broom"></i>
+                                            <span>Cancella messaggi</span>
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" @click="CloseChat">
                                             <i class="fa-solid fa-xmark"></i>

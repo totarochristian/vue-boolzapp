@@ -236,6 +236,20 @@ createApp({
             this.profile.avatar = './assets/images/profiles/' + this.profilePictures[this.tempModalResult];
             //Reset to 0 the temp modal result saved
             this.SetTempModalResult(0);
+        },
+        /**
+         * Function used to delete all the messages contained in the opened chat
+         */
+        DeleteChatMessages(){
+            this.contactOpened.messages.splice(0,this.contactOpened.messages.length);
+        },
+        /**
+         * Function used to delete all the chats messages
+         */
+        DeleteForEachChatAllMessages(){
+            this.contacts.forEach((contact)=>{
+                contact.messages.splice(0,contact.messages.length);
+            });
         }
     },
     async created(){
