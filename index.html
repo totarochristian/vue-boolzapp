@@ -134,6 +134,7 @@
                                         <div class="d-flex flex-column">
                                             <span class="fw-semibold ps-2 fs-6">{{contact.name}}</span>
                                             <span class="fw-semibold ps-2 fs-6 headerIcon" v-if="contact.messages.length>0">{{ accessStates[0]!=contact.lastAccess ? contact.messages[contact.messages.length-1].message : contact.lastAccess }}</span>
+                                            <span class="fw-semibold ps-2 fs-6 headerIcon" v-else-if="contact.messages.length==0">{{ accessStates[0]!=contact.lastAccess && accessStates[1]!=contact.lastAccess ? 'Ultimo accesso '+contact.lastAccess : contact.lastAccess }}</span>
                                         </div>
                                     </div>
                                     <div class="newMessageAndTime d-flex flex-column justify-content-between" v-if="contact.messages.length>0">
