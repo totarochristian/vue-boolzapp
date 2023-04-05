@@ -43,7 +43,24 @@
                         <div class="actions d-flex align-items-center px-4">
                             <i class="fa-solid fa-circle-notch headerIcon fs-4 ps-4"></i>
                             <i class="fa-solid fa-message headerIcon fs-4 ps-4"></i>
-                            <i class="fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4"></i>
+                            <div class="dropdown">
+                                <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseProfilePicture">
+                                            <i class="fa-regular fa-image"></i>
+                                            <span>Cambia foto profilo</span>
+                                        </div>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" @click="CloseChat" :class="contactOpened.id>0?'':'disabled'">
+                                            <i class="fa-solid fa-xmark"></i>
+                                            <span>Chiudi chat attiva</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="formContent d-flex flex-column gap-1 overflow-hidden">
