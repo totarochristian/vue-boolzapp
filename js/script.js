@@ -1,4 +1,4 @@
-import Picker from './emoji-picker.js';
+import Picker from '../components/vue3-emoji-picker/emoji-picker.js';
 
 const {createApp} = Vue;
 createApp({
