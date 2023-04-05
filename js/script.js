@@ -1,3 +1,5 @@
+import Picker from './emoji-picker.js';
+
 const {createApp} = Vue;
 createApp({
     data(){
