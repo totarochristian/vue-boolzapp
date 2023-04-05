@@ -51,18 +51,43 @@
                                 <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <span class="dropdown-item-text d-flex justify-content-center align-items-center gap-2 fw-semibold">
+                                            <i class="fa-solid fa-user"></i>
+                                            <span>Profilo</span>
+                                        </span>
+                                    </li>
+                                    <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseProfilePicture">
-                                            <i class="fa-solid fa-id-card-clip"></i>
-                                            <span>Cambia foto profilo</span>
+                                            <i class="fa-solid fa-image-portrait"></i>
+                                            <span>Aggiorna foto</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <span class="dropdown-item-text d-flex justify-content-center align-items-center gap-2 fw-semibold">
+                                            <i class="fa-solid fa-sliders"></i>
+                                            <span>Audio</span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseNewMessageSound">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                            <span>Nuovo messaggio</span>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseNewMessageSound">
-                                            <i class="fa-solid fa-id-card-clip"></i>
-                                            <span>Impostazioni audio</span>
+                                            <i class="fa-solid fa-circle-minus"></i>
+                                            <span>Eliminazione messaggio</span>
                                         </div>
                                     </li>
-                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <span class="dropdown-item-text d-flex justify-content-center align-items-center gap-2 fw-semibold">
+                                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                                            <span>Altro</span>
+                                        </span>
+                                    </li>
                                     <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteForEachChatAllMessages" :class="contacts.length>0?'':'disabled'">
                                             <i class="fa-solid fa-broom"></i>
@@ -136,12 +161,24 @@
                                 <span class="dropdown-toggle fa-solid fa-ellipsis-vertical headerIcon fs-4 ps-4" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <span class="dropdown-item-text d-flex justify-content-center align-items-center gap-2 fw-semibold">
+                                            <i class="fa-solid fa-comment"></i>
+                                            <span>Chat</span>
+                                        </span>
+                                    </li>
+                                    <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#choseChatBackground" @click="OpenModalChoseChatBackground">
                                             <i class="fa-regular fa-image"></i>
                                             <span>Cambia sfondo</span>
                                         </div>
                                     </li>
-                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                        <span class="dropdown-item-text d-flex justify-content-center align-items-center gap-2 fw-semibold">
+                                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                                            <span>Altro</span>
+                                        </span>
+                                    </li>
                                     <li>
                                         <div class="dropdown-item d-flex align-items-center gap-2" @click="DeleteChatMessages">
                                             <i class="fa-solid fa-broom"></i>
