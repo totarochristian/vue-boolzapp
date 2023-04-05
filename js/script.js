@@ -249,6 +249,8 @@ createApp({
          */
         DeleteChatMessages(){
             this.contactOpened.messages.splice(0,this.contactOpened.messages.length);
+            //Play an audio to notify the user the deletion of all messages
+            PlayAudio(this.profile.sounds.deleteMessage);
         },
         /**
          * Function used to delete all the chats messages
@@ -257,6 +259,8 @@ createApp({
             this.contacts.forEach((contact)=>{
                 contact.messages.splice(0,contact.messages.length);
             });
+            //Play an audio to notify the user the deletion of all messages in all the contacts chat
+            PlayAudio(this.profile.sounds.deleteMessage);
         },
         /**
          * Function used to close the opened chat and delete all the contacts
@@ -264,6 +268,8 @@ createApp({
         DeleteAllContacts(){
             this.CloseChat();
             this.contacts.splice(0,this.contacts.length);
+            //Play an audio to notify the user the deletion of the contacts
+            PlayAudio(this.profile.sounds.deleteMessage);
         },
         onSelectEmoji(emoji) {
             this.contactOpened.newMessageToSend += emoji.i;
