@@ -287,4 +287,4 @@ createApp({
     mounted(){
         setTimeout(this.ToggleSplashScreen,3000);
     }
-}).mount("#app");
+}).component('Picker', Picker).mount("#app");
