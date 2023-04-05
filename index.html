@@ -302,6 +302,29 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal used to make the user chose the remove message sound -->
+            <div class="modal-dialog" v-if="modalTypeOpened==3">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Scegli il suono per notificare l'eliminazione di un messaggio</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="SetTempModalResult(0)"></button>
+                    </div>
+                    <div class="modal-body overflow-y-auto">
+                        <div class="d-flex justify-content-center align-items-center p-4 flex-wrap gap-2" v-if="deleteMessageSounds.length > 1">
+                            <div class="audioElem p-4 rounded-4 d-flex flex-column justify-content-center" v-for="(sound,index) in deleteMessageSounds" @click="SetTempModalResult(index)" :class="index == tempModalResult ? 'selectedAudio' : ''">
+                                <p class="fs-5 fw-semibold">Traccia {{index+1}}</p>
+                                <audio controls>
+                                    <source :src="'./assets/sounds/delete/'+sound" type="audio/mpeg" :alt="'Audio '+index" />
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="SetTempModalResult(0)">Chiudi</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="SaveRemoveMessageSound()">Salva modifiche</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
