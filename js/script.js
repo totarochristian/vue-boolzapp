@@ -22,6 +22,8 @@ createApp({
             contacts: [],
             chatBackgrounds: ["allRed.png","forestDay.jpg","forestDayRed.jpg","forestHero.jpg","forestOrange.jpg","forestSunset.webp","manRed.webp","mine.webp","mountainsBirds.webp","riverSunset.webp"],
             profilePictures: ["avatar_1.jpg","avatar_2.jpg","avatar_3.jpg","avatar_4.jpg","avatar_5.jpg","avatar_6.jpg","avatar_7.jpg","avatar_8.jpg","avatar_9.jpg"],
+            newMessageSounds: ["newMessage1.wav","newMessage2.wav","newMessage3.wav","newMessage4.wav","newMessage5.mp3","newMessage6.wav"],
+            deleteMessageSounds: ["deleteMessage1.wav","deleteMessage2.mp3","deleteMessage3.mp3"],
             accessStates: ["Sta scrivendo ...","Online"],
             messagesToReturn: ["Ok","Va bene","Nessun problema","Ma stai bene?","Per caso sei caduto dalle scale?","Sei nato stupido o ti sei impegnato per diventarlo?","A volte non so se risponderti o continuare a farmi i cavoli miei!","Potresti pensare prima di parlare?","A volte non capisco se ci sei o ci fai...","Buongiorno!","Alla buon ora...","Non ci posso credere...","No!","Sei libero il prossimo sabato?","Vediamoci una di queste sere","Ah, ma allora mi pensi ogni tanto.. non ci sentiamo da un sacco di tempo!","Guarda chi è resuscitato dalla tomba! Come stai?"]
         }
