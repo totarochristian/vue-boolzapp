@@ -154,7 +154,7 @@
         </div>
         <!-- Modal used to make the user chose the backgrounds of a chat -->
         <div class="modal fade modal-xl" id="choseChatBackground" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog" v-if="modalTypeOpened==0">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Scegli il nuovo sfondo della chat con {{contactOpened.name}}</h1>

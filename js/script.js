@@ -4,6 +4,7 @@ createApp({
         return {
             splashVisibility: true,
             chatToSearch: '',
+            modalTypeOpened: 0,
             tempModalResult: '',
             contactOpened: { id: -1 },
             profile:{
@@ -167,6 +168,7 @@ createApp({
          * the current background selected if inside the array (otherwise set the 0);
          */
         OpenModalChoseChatBackground(){
+            this.modalTypeOpened = 0;
             let toSearch = this.contactOpened.backgroundImage.substring(this.contactOpened.backgroundImage.lastIndexOf('/') + 1, this.contactOpened.backgroundImage.length);
             this.tempModalResult = this.chatBackgrounds.indexOf(toSearch);
             //If not founded, set 0
