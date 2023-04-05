@@ -38,12 +38,16 @@
         <div id="neutralStripe" v-if="splashVisibility==false"></div>
         <div id="mainContainer" v-if="splashVisibility==false" class="d-flex justify-content-center align-items-center">
             <div id="form" class="d-flex">
+                <!-- Form left (list of contacts and basic settings) -->
                 <div id="formLeft" ref="formLeft" class="col-4 moveUpForm">
+                    <!-- Form left header, contains profile info and a menu with actions -->
                     <div class="formHeader d-flex justify-content-between align-items-center p-2">
+                        <!-- Info about the user profile -->
                         <div class="profile d-flex align-items-center px-1">
                             <img class="rounded-circle" :src="profile.avatar" :alt="'Avatar di '+profile.name" draggable="false">
                             <span class="fw-semibold ps-2 fs-6">{{profile.name}}</span>
                         </div>
+                        <!-- Menu with actions to do -->
                         <div class="actions d-flex align-items-center px-4">
                             <i class="fa-solid fa-circle-notch headerIcon fs-4 ps-4"></i>
                             <i class="dropdown-toggle fa-solid fa-message headerIcon fs-4 ps-4" data-bs-toggle="modal" data-bs-target="#newContact" @click="OpenCloseNewContactModal(true)"></i>
@@ -110,7 +114,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Form left content, contains a disable notify div that don't make anything, a search bar and a list of clicable contacts -->
                     <div class="formContent d-flex flex-column gap-1 overflow-hidden">
+                        <!-- Div with the disable notify info -->
                         <div id="disableNotify" class="d-flex justify-content-between align-items-center p-3">
                             <div id="bell" class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center">
                                 <i class="fa-solid fa-bell-slash fs-5 p-2 headerIcon"></i>
@@ -120,12 +126,14 @@
                                 <span class="fw-semibold ps-2 fs-7 text-decoration-underline activeNotifyColor">Attiva notifiche desktop</span>
                             </div>
                         </div>
+                        <!-- Div with the searchbar -->
                         <div id="searchBar" class="input-group px-2 pt-1">
                             <span class="input-group-text bg-white px-4" id="searchChatIcon">
                                 <i class="fa-solid fa-magnifying-glass headerIcon"></i>
                             </span>
                             <input id="searchChat" v-model.trim="chatToSearch" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="searchChatIcon" @change="SearchContact">
                         </div>
+                        <!-- Div containing all the contacts -->
                         <div id="contactsList" class="d-flex flex-column overflow-y-auto">
                             <div :id="'contact'+index" v-for="(contact,index) in contacts" @click="OpenContact(index)" class="contact d-flex p-3 rounded m-1 mb-0" :class="contact.visible==true? (contact.id == contactOpened.id ? 'active' : '') :'d-none'">
                                 <div class="profile d-flex justify-content-between align-items-center px-1">
@@ -146,7 +154,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- Form right (chat opened or text with Boolzap info) -->
                 <div id="formRight" ref="formRight" class="col-8 moveDownForm">
+                    <!-- Form right header with the profile opened info and some settings -->
                     <div class="formHeader d-flex justify-content-between align-items-center p-2" v-if="contactOpened.id>0">
                         <div class="profile d-flex align-items-center px-2 flex-fill">
                             <img class="rounded-circle" :src="contactOpened.avatar" :alt="'Avatar di '+contactOpened.name" draggable="false">
@@ -196,8 +206,10 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Form right content, with space for messages and a bottom bar to insert new messages -->
                     <div class="formContent d-flex flex-column overflow-hidden" v-if="contactOpened.id>0">
-                        <div id="readMessagesDiv" class="d-flex flex-column overflow-y-auto" :style="'background-image: url('+contactOpened.backgroundImage+');'">
+                        <!-- Div where will be placed the messages of the chat opened -->
+                        <div id="readMessagesDiv" class="d-flex flex-column overflow-y-auto" :style="'background-image: url('+contactOpened.backgroundImage+'); background-position: center;'">
                             <div :id="'message'+index" ref="chatMessages" v-for="(message,index) in contactOpened.messages" v-if="contactOpened.messages.length > 0" class="message d-flex flex-column rounded m-1" :class="message.status=='sent' ? 'messageByMe' : ''">
                                 <div class="d-flex">
                                     <span class="p-3 pb-1">{{message.message}}</span>
@@ -216,6 +228,7 @@
                                 <span class="p-1 pt-0 align-self-end headerIcon fs-8">{{message.timeAbbreviation}}</span>
                             </div>
                         </div>
+                        <!-- Bottom bar with the elements to add new message -->
                         <div id="writeMessagesDiv" class="d-flex justify-content-around align-items-center">
                             <div class="flex-fill text-center">
                                 <i class="fa-regular fa-face-smile conversationBarColor fs-4" @click="showEmojiPicker=!showEmojiPicker"></i>
@@ -226,6 +239,7 @@
                             <i class="fa-solid fa-microphone conversationBarColor fs-4 flex-fill text-center" v-else></i>
                         </div>
                     </div>
+                    <!-- Form right content when no chat opened by the user -->
                     <div class="formContent d-flex justify-content-center align-items-center flex-column p-4" v-else>
                         <h1 class="headerIcon fa-solid fa-shield-cat pb-4"></h1>
                         <h2 class="fs-5">Boolzap per Windows</h2>
