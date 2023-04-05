@@ -54,6 +54,9 @@ createApp({
             });
             //Scroll down the messages div
             this.MessagesScrollDown();
+            //Manage the z-index for formLeft and formRight in the mobile versione of site.
+            this.$refs.formLeft.classList.replace("moveUpForm","moveDownForm");
+            this.$refs.formRight.classList.replace("moveDownForm","moveUpForm");
         },
         /**
          * Function used to send a new message to an opened contact.
@@ -173,6 +176,9 @@ createApp({
          */
         CloseChat(){
             this.contactOpened = { id: -1 };
+            //Manage the z-index for formLeft and formRight in the mobile versione of site.
+            this.$refs.formRight.classList.replace("moveUpForm","moveDownForm");
+            this.$refs.formLeft.classList.replace("moveDownForm","moveUpForm");
         },
         /**
          * Function used to set the tempModalResult var with a passed value.
